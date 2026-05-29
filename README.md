@@ -15,32 +15,6 @@ downloads/      The three source deliverables (.docx, .xlsx, .pdf)
 .nojekyll       Tells GitHub Pages to serve files as-is
 ```
 
-## Deploy to GitHub Pages
-
-1. Create a new GitHub repository (e.g. `icu-billing-reference`).
-2. Put **the contents of this folder at the repo root** (so `index.html` is at the top level) and push:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial critical care billing reference site"
-   git branch -M main
-   git remote add origin https://github.com/<you>/<repo>.git
-   git push -u origin main
-   ```
-3. In the repo: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch **main**, folder **/ (root)**. Save.
-4. Wait ~1 minute, then open `https://<you>.github.io/<repo>/`.
-
-> Prefer to keep the site in a subfolder? Move these files into `/docs` and choose folder **/docs** in step 3.
-
-## Preview locally
-
-```bash
-cd <this folder>
-python3 -m http.server 8000
-# open http://localhost:8000
-```
-(Opening `index.html` directly via `file://` also works for everything except the `fetch`-free parts — this site has none, so `file://` is fine too.)
-
 ## Updating the data
 
 The diagnosis and DRG tables in `data.js` are generated from `ICU_Diagnosis_DRG_Reference_2026.xlsx`. To refresh after editing the workbook, regenerate with the included `gen_data.py` (requires `openpyxl`):
