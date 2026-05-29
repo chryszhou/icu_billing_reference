@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critical Care Billing & Documentation Reference — CY/FY2026</title>
+<meta name="description" content="Critical care billing, documentation, RVU, and ICD-10/DRG reference for intensivists. CY2026 Medicare values; CC/MCC confirmed against CMS Appendix C.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <h1>Critical Care Billing &amp; Documentation</h1>
+    <div class="sub">Intensivist reference &middot; CY/FY2026 &middot; academic center</div>
+    <nav>
+      <div class="grp">Start</div>
+      <a href="#overview">Overview &amp; how payment works</a>
+      <a href="#downloads">Downloads</a>
+      <div class="grp">Professional billing</div>
+      <a href="#em">Critical care E/M (99291/99292)</a>
+      <a href="#trainees">Residents &amp; APPs</a>
+      <a href="#rvu">Critical care RVUs</a>
+      <a href="#procedures">Procedures</a>
+      <div class="grp">Diagnoses &amp; DRG value</div>
+      <a href="#diagnoses">Diagnoses by organ system</a>
+      <a href="#drg">DRG value ranking</a>
+      <a href="#complex">Complex care &amp; long LOS</a>
+      <a href="#cirrhosis">Cirrhosis decompensations</a>
+      <a href="#malnutrition">Malnutrition</a>
+      <a href="#trach">Chronic trach &amp; vent</a>
+      <div class="grp">Reference</div>
+      <a href="#sources">Sources &amp; caveats</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button id="menubtn" aria-label="Menu">&#9776;</button>
+      <span class="t">Critical Care Billing Reference</span>
+    </div>
+    <div class="wrap">
+
+      <!-- OVERVIEW -->
+      <section id="overview" class="hero">
+        <h2>Critical Care Billing &amp; Documentation Reference</h2>
+        <p>A working reference for intensivists at an academic center. CY2026 Medicare professional values (conversion factor <strong>$33.40</strong>); diagnosis CC/MCC status confirmed against the CMS MS-DRG v43 (FY2026) Appendix C list; DRG relative weights from the CMS FY2026 IPPS Final Rule Table 5.</p>
+        <p class="small" style="color:#cfe0f5">Educational reference for documentation improvement — not coding, legal, or financial advice, and not an official CMS/AMA product. Verify against CMS before billing.</p>
+      </section>
+
+      <section>
+        <h2>How payment works — and why wording moves money</h2>
+        <p>Two code sets do two different jobs; confusing them is the most common error.</p>
+        <ul>
+          <li><strong>CPT / E&amp;M codes</strong> generate professional dollars. Medicare payment = total RVU &times; conversion factor (CF), adjusted by local GPCI. CY2026 non-APM CF = <strong>$33.40</strong> (QP/APM CF $33.57).</li>
+          <li><strong>ICD-10 diagnosis codes</strong> don't add professional RVUs. They establish medical necessity and drive the facility <strong>MS-DRG</strong> and severity (CC/MCC). On the facility side, payment = DRG relative weight &times; hospital base rate (FY2026 national standardized operating base rate <strong>$6,752.61</strong>, before wage index/DSH/IME/outliers).</li>
+        </ul>
+        <h3>The two payment formulas</h3>
+        <p class="callout"><strong>Professional:</strong> [(wRVU&times;wGPCI) + (PE&times;peGPCI) + (MP&times;mpGPCI)] &times; $33.40<br>
+        <strong>Facility (DRG):</strong> DRG relative weight &times; hospital base rate (~$6,752.61 national)</p>
+        <p>DRGs come in tiers — <em>with MCC</em> (highest) / <em>with CC</em> / <em>without CC-MCC</em>. The tier is set by the single highest-severity secondary diagnosis: one MCC maxes the tier, so the <strong>first</strong> MCC/CC captured is the valuable one. Capturing a CC is typically worth ~$1,200–$3,000; an MCC ~$3,000–$6,000+.</p>
+        <p class="badge-key small"><strong>Color key:</strong>
+          <span class="b mcc">MCC</span> major (highest $)
+          <span class="b cc">CC</span> complication/comorbidity
+          <span class="b neither">Neither</span> no severity weight
+          <span class="b proc">Procedure</span> drives DRG via procedure code
+        </p>
+      </section>
+
+      <!-- DOWNLOADS -->
+      <section id="downloads">
+        <h2>Downloads</h2>
+        <p class="lead">The full deliverables, kept in sync with this site.</p>
+        <div class="dl-grid">
+          <div class="dl-card"><span class="ext">DOCX</span>
+            <h4>Critical Care Billing Cheat Sheet</h4>
+            <p class="small">E/M, time rules, residents/APPs, RVUs, procedures, diagnoses.</p>
+            <a class="btn" href="downloads/Critical_Care_Billing_Cheat_Sheet_2026.docx" download>Download .docx</a>
+          </div>
+          <div class="dl-card"><span class="ext">XLSX</span>
+            <h4>ICU Diagnosis &amp; DRG Reference</h4>
+            <p class="small">8 tabs: diagnoses by system, DRG value ranking, complex care, and more.</p>
+            <a class="btn" href="downloads/ICU_Diagnosis_DRG_Reference_2026.xlsx" download>Download .xlsx</a>
+          </div>
+          <div class="dl-card"><span class="ext">PDF</span>
+            <h4>One-Page Capture Quick Card</h4>
+            <p class="small">Print-ready MCC/CC capture card for the workroom.</p>
+            <a class="btn" href="downloads/ICU_Capture_QuickCard.pdf" download>Download .pdf</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- E/M -->
+      <section id="em">
+        <h2>Critical Care E/M — 99291 &amp; 99292</h2>
+        <p>Critical care is <strong>time-based</strong>, not complexity-based. Both must be true: (1) a critical illness/injury acutely impairing a vital organ system with high probability of imminent life-threatening deterioration, AND (2) high-complexity physician work directing care to treat/prevent it. ICU location alone, or a sick-but-stable patient, does not qualify.</p>
+
+        <h3>Time &rarr; code mapping</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Total critical care time (per calendar day)</th><th>Code(s) to report</th></tr></thead>
+          <tbody>
+            <tr><td>Less than 30 min</td><td>Not critical care — subsequent care E&amp;M (99231–99233)</td></tr>
+            <tr><td>30–74 min</td><td>99291 &times; 1</td></tr>
+            <tr><td>75–104 min</td><td>99291 + 99292 &times; 1</td></tr>
+            <tr><td>105–134 min</td><td>99291 + 99292 &times; 2</td></tr>
+            <tr><td>135–164 min</td><td>99291 + 99292 &times; 3</td></tr>
+            <tr><td>165–194 min</td><td>99291 + 99292 &times; 4</td></tr>
+            <tr><td><strong>Each additional 30 min</strong></td><td><strong>+ one more 99292</strong></td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Medicare requires the full additional 30 minutes before the first 99292 (74 + 30 = 104 min). Some commercial payers allow partial increments.</p>
+
+        <h3>Capturing time across multiple attendings (and APPs)</h3>
+        <p>Document total critical care <strong>minutes</strong> in every note and let coding assign 99291/99292 — physicians should not self-select the codes. That one habit captures the most and prevents the common miss of billing 99291 but forgetting 99292.</p>
+        <ul>
+          <li><strong>Same group + same specialty aggregates.</strong> Two PCCM attendings in the same group are treated as one physician — their minutes on the same patient/same calendar day combine. The group reports 99291 <strong>once</strong> for the first 30–74 min, then 99292 for each additional 30. Example: 20 min + 85 min = 105 min &rarr; 99291 + 99292.</li>
+          <li><strong>They cannot each bill 99291</strong> (double-billing) — the time combines into one group claim. A different-specialty physician does bill a separate 99291.</li>
+          <li>Aggregation works even if neither attending reached 30 minutes alone — the combined time qualifies.</li>
+          <li>Each provider's time must independently be critical care, and simultaneous bedside time is counted <strong>once</strong>, not doubled.</li>
+          <li>With APPs in the group, same approach — both names &amp; minutes in the notes; coding applies the FS modifier and split/shared logic (see <a href="#trainees">Residents &amp; APPs</a>).</li>
+        </ul>
+        <div class="smartphrase" id="sp1" data-copy="I personally provided ___ minutes of critical care to this patient on [date], exclusive of separately billable procedures and teaching time. The patient has [organ system(s)] at high risk of life-threatening deterioration; I reviewed [data], directed [interventions], and reassessed the response.">
+          <button class="copybtn" data-target="sp1">Copy</button>
+          <span class="lbl">Ready-to-paste minute attestation — never a range, never the same number every patient</span>
+          &ldquo;I personally provided ___ minutes of critical care to this patient on [date], exclusive of separately billable procedures and teaching time. The patient has [organ system(s)] at high risk of life-threatening deterioration; I reviewed [data], directed [interventions], and reassessed the response.&rdquo;
+        </div>
+
+        <h3>What time counts (and what doesn't)</h3>
+        <ul>
+          <li><strong>Counts:</strong> bedside time AND unit/floor time on that patient — reviewing labs/imaging, discussing with consultants/staff, documenting, and family discussions when the patient can't participate and the discussion drives management.</li>
+          <li><strong>Doesn't:</strong> separately billable procedure time (carve it out), teaching time, time off the unit, time on other patients.</li>
+        </ul>
+
+        <h3>Bundled into 99291/99292 — never billed separately</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Bundled service</th><th class="code">CPT</th></tr></thead>
+          <tbody>
+            <tr><td>Vascular access / IV placement</td><td class="code">36000, 36410, 36415, 36591, 36600</td></tr>
+            <tr><td>Gastric intubation / lavage</td><td class="code">43752, 43753, 91105</td></tr>
+            <tr><td>Chest X-ray interpretation</td><td class="code">71045, 71046</td></tr>
+            <tr><td>Pulse oximetry</td><td class="code">94760, 94761, 94762</td></tr>
+            <tr><td>Ventilator / CPAP management</td><td class="code">94002–94004, 94660, 94662</td></tr>
+            <tr><td>Cardiac output measurements</td><td class="code">93561, 93562</td></tr>
+            <tr><td>Temporary transcutaneous pacing</td><td class="code">92953</td></tr>
+            <tr><td>Blood gases &amp; data interpretation/storage</td><td class="code">99090</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Anything NOT on this list (intubation, CPR, central/arterial lines, chest tube, thora/paracentesis, LP, cardioversion, bronchoscopy, pacemaker, Swan-Ganz) is separately billable — but its minutes must be carved out of critical care time.</p>
+      </section>
+
+      <!-- TRAINEES -->
+      <section id="trainees">
+        <h2>Billing with residents &amp; APPs (academic settings)</h2>
+        <p>Who may bill and whose time counts depends on whether you're with a <strong>resident</strong> (Teaching Physician rules) or an <strong>APP/NPP</strong> (Split/Shared rules). Don't conflate them.</p>
+
+        <h3>Residents — Teaching Physician (TP) rules</h3>
+        <ul>
+          <li><strong>Only the teaching physician's own time counts.</strong> Resident-alone time and teaching time don't count toward critical care minutes.</li>
+          <li><strong>A resident can't bill critical care, and there's no split/shared with a resident.</strong> The service is billed under the TP.</li>
+          <li>The TP personally furnishes the billed critical care time and documents their own minutes + management. May refer to/combine the resident's note for history, exam, and assessment, but writes their own attestation and time statement.</li>
+          <li>Append modifier <strong>GC</strong> when a resident participated.</li>
+          <li>The primary-care exception / <strong>GE</strong> modifier does NOT apply to critical care.</li>
+        </ul>
+        <div class="smartphrase" id="sp2" data-copy="I personally provided ___ minutes of critical care to this patient, exclusive of separately billable procedures and teaching time. I reviewed the labs/imaging/hemodynamics, directed vasopressor titration and ventilator changes, and I agree with the resident's documented history, exam, and assessment except as noted.">
+          <button class="copybtn" data-target="sp2">Copy</button>
+          <span class="lbl">Sample TP critical care attestation</span>
+          &ldquo;I personally provided ___ minutes of critical care to this patient, exclusive of separately billable procedures and teaching time. I reviewed the labs/imaging/hemodynamics, directed vasopressor titration and ventilator changes, and I agree with the resident's documented history, exam, and assessment except as noted.&rdquo;
+        </div>
+
+        <h3>APPs / NPPs — Split (or Shared) Visit rules</h3>
+        <ul>
+          <li>Applies when a physician AND an APP (NP/PA) in the <strong>same group</strong> both personally perform part of the same patient's care on the same calendar day in a facility setting. (Incident-to does not apply to hospital inpatient/ICU care.)</li>
+          <li><strong>Critical care:</strong> sum the physician's and APP's minutes; whoever performed the <strong>substantive portion (&gt;50% of combined time)</strong> bills. For time-based services, substantive portion = time only, not MDM.</li>
+          <li>Append modifier <strong>FS</strong> to any split/shared visit, regardless of who bills.</li>
+          <li>Document both individuals by name, each one's time, the combined total, and who did the substantive portion; the billing practitioner signs/dates.</li>
+          <li><strong>Payment lever:</strong> APP-billed pays ~85% of the fee schedule; physician-billed (substantive portion) pays 100%.</li>
+        </ul>
+
+        <h3>Quick decision guide</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>You're working with…</th><th>Whose time counts</th><th>Who bills</th><th>Modifier</th></tr></thead>
+          <tbody>
+            <tr><td>A resident (no APP)</td><td>Teaching physician's time only</td><td>Teaching physician</td><td class="code">GC</td></tr>
+            <tr><td>An APP in your group</td><td>Physician + APP minutes combined; &gt;50% = substantive</td><td>Whoever did the substantive portion</td><td class="code">FS</td></tr>
+            <tr><td>Both a resident and an APP</td><td>TP rules for MD/resident; APP minutes combine per split/shared</td><td>Per rows above</td><td class="code">GC and/or FS</td></tr>
+            <tr><td>A different-specialty physician</td><td>Each counts their own time</td><td>Each bills their own</td><td>(none)</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Medicare rules; commercial payers may differ. Split/shared substantive-portion definitions have shifted year to year — confirm current CMS/MAC policy.</p>
+      </section>
+
+      <!-- RVU -->
+      <section id="rvu">
+        <h2>Critical care RVUs &amp; reimbursement</h2>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Service</th><th class="num">Work RVU</th><th class="num">Total RVU (facility)</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">99291</td><td>Critical care, first 30–74 min</td><td class="num">4.50</td><td class="num">5.96</td><td class="num">$199</td></tr>
+            <tr><td class="code">99292</td><td>Critical care, each addl 30 min (add-on)</td><td class="num">2.25</td><td class="num">3.00</td><td class="num">$100</td></tr>
+            <tr><td class="code">99233</td><td>Subsequent care, high (comparison)</td><td class="num">2.00</td><td class="num">2.93</td><td class="num">$98</td></tr>
+            <tr><td class="code">99232</td><td>Subsequent care, moderate</td><td class="num">1.39</td><td class="num">2.06</td><td class="num">$69</td></tr>
+            <tr><td class="code">99231</td><td>Subsequent care, low</td><td class="num">1.00</td><td class="num">1.51</td><td class="num">$50</td></tr>
+          </tbody>
+        </table></div>
+        <p class="callout"><strong>Worked example:</strong> 2 h 10 min (130 min) = 99291 + 99292&times;2 = 4.50 + (2.25&times;2) = <strong>9.00 wRVU &asymp; $399</strong>. The same day billed as 99233 = 2.00 wRVU &asymp; $98 — roughly a 4&times; difference for documenting time correctly.</p>
+        <p class="small">National, unadjusted facility RVUs &times; $33.40. Local payment varies with GPCI.</p>
+      </section>
+
+      <!-- PROCEDURES -->
+      <section id="procedures">
+        <h2>Procedure billing</h2>
+        <p>Most ICU procedures are separately payable in addition to same-day critical care, but: (1) attach the right modifier so the payer doesn't bundle them into the E&amp;M, and (2) carve the procedure time out of critical care minutes.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Procedure</th><th class="num">Work RVU</th><th class="num">Total RVU</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">36556</td><td>Central venous catheter, non-tunneled, age &ge;5</td><td class="num">1.71</td><td class="num">2.32</td><td class="num">$77</td></tr>
+            <tr><td class="code">36620</td><td>Arterial line, percutaneous</td><td class="num">0.98</td><td class="num">1.22</td><td class="num">$41</td></tr>
+            <tr><td class="code">36569</td><td>PICC, age &ge;5, without imaging</td><td class="num">1.85</td><td class="num">2.58</td><td class="num">$86</td></tr>
+            <tr><td class="code">36573</td><td>PICC, age &ge;5, with imaging guidance</td><td class="num">1.66</td><td class="num">2.16</td><td class="num">$72</td></tr>
+            <tr><td class="code">31500</td><td>Emergency endotracheal intubation</td><td class="num">2.93</td><td class="num">3.98</td><td class="num">$133</td></tr>
+            <tr><td class="code">92950</td><td>Cardiopulmonary resuscitation (CPR)</td><td class="num">3.90</td><td class="num">5.10</td><td class="num">$170</td></tr>
+            <tr><td class="code">32551</td><td>Tube thoracostomy (chest tube)</td><td class="num">2.96</td><td class="num">4.28</td><td class="num">$143</td></tr>
+            <tr><td class="code">32554</td><td>Thoracentesis, without imaging</td><td class="num">1.77</td><td class="num">2.37</td><td class="num">$79</td></tr>
+            <tr><td class="code">32555</td><td>Thoracentesis, with imaging guidance</td><td class="num">2.21</td><td class="num">2.81</td><td class="num">$94</td></tr>
+            <tr><td class="code">49082</td><td>Paracentesis, without imaging</td><td class="num">1.21</td><td class="num">2.13</td><td class="num">$71</td></tr>
+            <tr><td class="code">49083</td><td>Paracentesis, with imaging guidance</td><td class="num">1.95</td><td class="num">2.78</td><td class="num">$93</td></tr>
+            <tr><td class="code">62270</td><td>Diagnostic lumbar puncture</td><td class="num">1.19</td><td class="num">1.76</td><td class="num">$59</td></tr>
+            <tr><td class="code">92960</td><td>Elective external cardioversion</td><td class="num">1.95</td><td class="num">2.84</td><td class="num">$95</td></tr>
+            <tr><td class="code">31622</td><td>Diagnostic bronchoscopy / washing</td><td class="num">2.47</td><td class="num">3.60</td><td class="num">$120</td></tr>
+            <tr><td class="code">33210</td><td>Temporary transvenous pacemaker insertion</td><td class="num">2.97</td><td class="num">4.21</td><td class="num">$141</td></tr>
+            <tr><td class="code">93503</td><td>Swan-Ganz / PA catheter insertion</td><td class="num">1.95</td><td class="num">2.44</td><td class="num">$82</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">CY2026 Medicare PFS, national/unadjusted, total facility RVU &times; $33.40. Verify against the CMS PFS Look-Up Tool before billing.</p>
+
+        <h3>Necessary elements of a billable procedure note</h3>
+        <ul>
+          <li><strong>Indication / medical necessity</strong> — why now.</li>
+          <li><strong>Informed consent</strong> (or documented emergency exception).</li>
+          <li><strong>Time-out / patient ID</strong> for invasive procedures.</li>
+          <li><strong>Technique &amp; site</strong> — approach, laterality, anesthesia/prep, image guidance (and whether guidance is bundled).</li>
+          <li><strong>Findings, specimens, devices placed</strong> (size, depth, confirmation — e.g., CXR for line position).</li>
+          <li><strong>Complications</strong> (or explicit &ldquo;none&rdquo;) and post-procedure status.</li>
+          <li><strong>Provider attestation</strong> + supervision/teaching-physician statement if a trainee assisted.</li>
+          <li><strong>Time statement</strong> confirming procedure time was excluded from critical care minutes.</li>
+        </ul>
+
+        <h3>Modifiers that matter in the ICU</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">Modifier</th><th>Use it when</th></tr></thead>
+          <tbody>
+            <tr><td class="code">-25</td><td>A significant, separately identifiable E&amp;M (e.g., 99291) is performed the same day as a procedure. Append to the E&amp;M.</td></tr>
+            <tr><td class="code">-59 / XE,XS,XU</td><td>Two normally bundled procedures (per NCCI) were distinct — separate sites, sessions, or organ systems.</td></tr>
+            <tr><td class="code">-76 / -77</td><td>Repeat procedure by same (-76) or different (-77) physician.</td></tr>
+            <tr><td class="code">-22</td><td>Substantially greater work than typical; requires a note explaining it.</td></tr>
+            <tr><td class="code">-26</td><td>Professional component only, when the facility owns the technical component.</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Most ICU bedside procedures carry a 000-day global, so same-day critical care with -25 is generally payable. Check NCCI edits for the specific pair.</p>
+      </section>
+
+      <!-- DIAGNOSES -->
+      <section id="diagnoses">
+        <h2>Diagnoses by organ system</h2>
+        <p class="lead">Top ICU diagnoses with confirmed CC/MCC status (CMS Appendix C, FY2026). Search and filter; the documentation tip is where specificity changes severity.</p>
+        <div class="controls">
+          <input type="text" id="organ-search" placeholder="Search code, diagnosis, or tip…">
+          <select id="status-filter">
+            <option value="">All severities</option>
+            <option value="MCC">MCC only</option>
+            <option value="CC">CC only</option>
+            <option value="NEITHER">No weight</option>
+          </select>
+          <select id="organ-filter"></select>
+          <span class="count" id="organ-count"></span>
+        </div>
+        <div id="organ-tables"></div>
+      </section>
+
+      <!-- DRG -->
+      <section id="drg">
+        <h2>DRG value ranking — what each condition is worth</h2>
+        <p class="lead">Actual FY2026 MS-DRG relative weights (CMS IPPS Final Rule, Table 5), highest value first. Edit the base rate to match your hospital; dollars recalculate live. Click a column header to sort.</p>
+        <div class="controls">
+          <label>Hospital base rate ($/discharge):
+            <input type="number" id="baserate" step="0.01" style="width:120px">
+          </label>
+          <span class="pill">Default = FY2026 national $6,752.61</span>
+        </div>
+        <div id="drg-table"></div>
+        <p class="small">National, unadjusted (before wage index, DSH/IME, transfer/outlier). Ventilation/trach DRGs (003/004/207/208) are procedure-driven — vent hours &gt;96 vs &le;96 (207 vs 208) is the single biggest lever.</p>
+      </section>
+
+      <!-- COMPLEX -->
+      <section id="complex">
+        <h2>Complex care &amp; long length-of-stay</h2>
+        <p class="lead">The chronically critically ill: capture severity, present-on-admission (POA) status, and ventilation duration. Some conditions forfeit DRG credit if hospital-acquired (HAC).</p>
+        <div id="complex-table"></div>
+        <p class="small">Pressure injury stage 3/4/unstageable = MCC (HAC if not POA). Vent &gt;96h (PCS 5A1955Z) vs &le;96h (5A1945Z) is the biggest single lever. CLABSI/CAUTI = HAC if not POA.</p>
+      </section>
+
+      <!-- CIRRHOSIS -->
+      <section id="cirrhosis">
+        <h2>Decompensated cirrhosis</h2>
+        <p class="lead">Cirrhosis itself is only a CC; the decompensations win the severity. Code cirrhosis PLUS each decompensation present.</p>
+        <div id="cirrhosis-table"></div>
+        <p class="small">AKI in cirrhosis: hepatorenal syndrome (K76.7, MCC) vs ATN/prerenal (N17, CC) — the distinction changes the tier. Note: hepatic encephalopathy K76.82 is <strong>not</strong> a CC/MCC; capture hepatic failure with/without coma (K72.x) for severity.</p>
+      </section>
+
+      <!-- MALNUTRITION -->
+      <section id="malnutrition">
+        <h2>Malnutrition</h2>
+        <p class="lead">Severe = MCC; moderate/mild = CC. Requires <strong>physician</strong> documentation tied to ASPEN/GLIM criteria — an RDN note alone is not enough. BMI (Z68.x) does not establish malnutrition.</p>
+        <div id="maln-table"></div>
+        <p class="small">Note must contain: physician diagnosis + severity, etiology, criteria met (intake, weight loss %, muscle/fat loss, fluid, grip), intervention, and follow-up. Severe malnutrition (MCC) is often worth ~$3,000–$6,000+ on a stay with no other MCC.</p>
+      </section>
+
+      <!-- TRACH -->
+      <section id="trach">
+        <h2>Chronic trach-to-vent patients</h2>
+        <p class="lead">Status codes don't drive the DRG. The procedure (ventilation hours) and acute respiratory failure move payment.</p>
+        <div id="trach-table"></div>
+        <p class="small">&ldquo;Chronically vented at baseline&rdquo; = chronic respiratory failure (CC). A new acute change (hypercapnia, pneumonia, failure to wean with decompensation) = acute-on-chronic respiratory failure (MCC) — document the acute change explicitly.</p>
+      </section>
+
+      <!-- SOURCES -->
+      <section id="sources">
+        <h2>Sources &amp; caveats</h2>
+        <ul>
+          <li>Diagnosis CC/MCC status confirmed directly against the CMS ICD-10 MS-DRG v43 (FY2026) Definitions Manual, <strong>Appendix C Part 1</strong> (the list underlying IPPS Tables 6I/6J). Status can change annually.</li>
+          <li>DRG relative weights from the CMS FY2026 IPPS Final Rule (CMS-1833-F) Table 5; national standardized operating base rate $6,752.61.</li>
+          <li>Professional RVU/$ figures use CY2026 Medicare PFS values (conversion factor $33.40); national, unadjusted. Confirm individual codes against the CMS PFS Look-Up Tool before billing.</li>
+          <li>Teaching physician and split/shared rules per the CMS Medicare Claims Processing Manual / MLN and ACEP FAQs; substantive-portion definitions have shifted year to year.</li>
+          <li>Caution: icd10data.com shows DRG <em>groupings</em>, not a code's own secondary-dx CC/MCC status — a common source of error. Statuses here were read from Appendix C itself.</li>
+          <li>This is an educational documentation-improvement reference — not coding, legal, or financial advice, and not an official CMS, AMA, or MGMA product. CPT&reg; is a registered trademark of the AMA. Final code assignment rests with certified coders/CDI and your compliance team.</li>
+        </ul>
+        <p class="disclaimer">Built as a static reference site. Values current as of the FY2026 / CY2026 Medicare rules. Re-verify at the next ICD-10 / MS-DRG / PFS update.</p>
+      </section>
+
+    </div>
+  </div>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
