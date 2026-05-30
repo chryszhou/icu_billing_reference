@@ -1,19 +1,27 @@
-# Critical Care Billing & Documentation Reference
+# Pulmonary Billing & Documentation Reference
 
-A static reference site for ICU billing, documentation, RVUs, and ICD-10/DRG capture — built for intensivists at an academic center. CY2026 Medicare professional values; diagnosis CC/MCC status confirmed against the CMS MS-DRG v43 (FY2026) Appendix C; DRG relative weights from the CMS FY2026 IPPS Final Rule Table 5.
+A static, two-page reference site for an academic pulmonary service, built for intensivists/pulmonologists. CY2026 Medicare professional values throughout.
+
+- **Critical Care (ICU)** — `index.html`: ICU billing, documentation, RVUs, and ICD-10/DRG capture. Diagnosis CC/MCC status confirmed against the CMS MS-DRG v43 (FY2026) Appendix C; DRG relative weights from the CMS FY2026 IPPS Final Rule Table 5.
+- **Pulmonary Clinic** — `clinic.html`: outpatient/academic-clinic billing — office E/M (99202–99215), teaching-physician rules with learners charting, APP incident-to vs split/shared, telehealth (Ohio-specific), e-consults, remote monitoring, transitional/chronic/principal care management, infusions & biologics, PFTs, and pulmonary rehab/sleep.
+
+A switcher at the top of each sidebar moves between the two pages.
 
 No build step, no dependencies — plain HTML/CSS/JS. Works on GitHub Pages.
 
 ## What's here
 
 ```
-index.html      The site (all narrative sections + table containers)
-styles.css      Styling
-data.js         Diagnosis / DRG data (generated from the workbook)
-app.js          Renders the interactive tables, search, sort, live $ calc
-downloads/      The three source deliverables (.docx, .xlsx, .pdf)
+index.html      Critical Care (ICU) page — narrative sections + interactive table containers
+clinic.html     Pulmonary Clinic page — self-contained narrative + static tables
+styles.css      Shared styling (incl. the cross-page switcher)
+data.js         Diagnosis / DRG data for the ICU page (generated from the workbook)
+app.js          Shared: renders the ICU interactive tables (guarded), copy buttons, nav
+downloads/      The three ICU source deliverables (.docx, .xlsx, .pdf)
 .nojekyll       Tells GitHub Pages to serve files as-is
 ```
+
+`app.js`'s data-driven renderers are guarded by element checks, so the same file safely powers both pages (the clinic page only uses the copy-button and nav helpers).
 
 ## Updating the data
 

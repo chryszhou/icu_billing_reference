@@ -143,19 +143,23 @@
   }
 
   document.addEventListener("DOMContentLoaded",function(){
-    renderOrgan();
-    document.getElementById("organ-search").addEventListener("input",filterOrgan);
-    document.getElementById("status-filter").addEventListener("change",filterOrgan);
-    document.getElementById("organ-filter").addEventListener("change",filterOrgan);
-
-    document.getElementById("baserate").value=S.base;
-    document.getElementById("baserate").addEventListener("input",renderDRG);
-    renderDRG();
-
-    simpleTable("complex-table",S.complex,["Code","Condition","CC/MCC","Documentation tip"],["code","name","status","tip"]);
-    simpleTable("cirrhosis-table",S.cirrhosis,["Decompensation","ICD-10","CC/MCC","Documentation tip"],["name","code","status","tip"]);
-    simpleTable("maln-table",S.malnutrition,["Severity","ICD-10","CC/MCC","Notes"],["name","code","status","tip"]);
-    simpleTable("trach-table",S.trachvent,["Item","Code","Type","Documentation tip"],["name","code","status","tip"]);
+    // Index-specific renderers — guarded so app.js can be shared by clinic.html,
+    // which has the copy buttons + nav but none of these data-driven containers.
+    if(document.getElementById("organ-tables")){
+      renderOrgan();
+      document.getElementById("organ-search").addEventListener("input",filterOrgan);
+      document.getElementById("status-filter").addEventListener("change",filterOrgan);
+      document.getElementById("organ-filter").addEventListener("change",filterOrgan);
+    }
+    if(document.getElementById("baserate")){
+      document.getElementById("baserate").value=S.base;
+      document.getElementById("baserate").addEventListener("input",renderDRG);
+      renderDRG();
+    }
+    if(document.getElementById("complex-table")) simpleTable("complex-table",S.complex,["Code","Condition","CC/MCC","Documentation tip"],["code","name","status","tip"]);
+    if(document.getElementById("cirrhosis-table")) simpleTable("cirrhosis-table",S.cirrhosis,["Decompensation","ICD-10","CC/MCC","Documentation tip"],["name","code","status","tip"]);
+    if(document.getElementById("maln-table")) simpleTable("maln-table",S.malnutrition,["Severity","ICD-10","CC/MCC","Notes"],["name","code","status","tip"]);
+    if(document.getElementById("trach-table")) simpleTable("trach-table",S.trachvent,["Item","Code","Type","Documentation tip"],["name","code","status","tip"]);
 
     wireCopy(); wireNav();
   });

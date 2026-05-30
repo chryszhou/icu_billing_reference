@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulmonary Clinic Billing & Documentation Reference — CY2026</title>
+<meta name="description" content="Outpatient billing & documentation reference for an academic pulmonary clinic: office E/M, teaching-physician rules with learners, telehealth (Ohio), e-consults, complex/longitudinal care, infusions & biologics, PFTs. CY2026 Medicare values.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-clinic">
+<div class="layout">
+  <aside class="sidebar">
+    <h1>Pulmonary Clinic Billing &amp; Documentation</h1>
+    <div class="sub">Academic outpatient reference &middot; CY2026</div>
+    <div class="pageswitch">
+      <a href="index.html">Critical Care<br>(ICU)</a>
+      <a href="clinic.html" class="cur">Pulmonary<br>Clinic</a>
+    </div>
+    <nav>
+      <div class="grp">Start</div>
+      <a href="#overview">Overview &amp; how clinic payment works</a>
+      <a href="#site">Office vs provider-based clinic</a>
+      <div class="grp">Professional billing</div>
+      <a href="#em">Office/outpatient E/M (99202–99215)</a>
+      <a href="#learners">Teaching physician &amp; learners</a>
+      <a href="#app">APPs — incident-to vs split/shared</a>
+      <div class="grp">Virtual &amp; connected care</div>
+      <a href="#telehealth">Telehealth (Ohio-specific)</a>
+      <a href="#econsult">E-consults &amp; virtual check-ins</a>
+      <a href="#evisit">E-visits (MyChart messages)</a>
+      <a href="#monitoring">Remote monitoring (RPM/RTM)</a>
+      <div class="grp">Longitudinal &amp; complex care</div>
+      <a href="#tcm">Transitional care (post-discharge)</a>
+      <a href="#ccm">Chronic &amp; principal care mgmt</a>
+      <a href="#acp">Advance care &amp; tobacco</a>
+      <div class="grp">Diagnostics &amp; therapeutics</div>
+      <a href="#pft">PFTs &amp; component billing</a>
+      <a href="#infusions">Infusions &amp; biologics</a>
+      <a href="#rehab">Pulmonary rehab &amp; sleep</a>
+      <div class="grp">Reference</div>
+      <a href="#modifiers">Clinic modifiers</a>
+      <a href="#sources">Sources &amp; caveats</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button id="menubtn" aria-label="Menu">&#9776;</button>
+      <span class="t">Pulmonary Clinic Billing Reference</span>
+    </div>
+    <div class="wrap">
+
+      <!-- OVERVIEW -->
+      <section id="overview" class="hero">
+        <h2>Pulmonary Clinic Billing &amp; Documentation Reference</h2>
+        <p>A working reference for the <strong>outpatient academic pulmonary clinic</strong> — where fellows and residents may be charting, APPs share the schedule, and the visit mix runs from a stable-asthma recheck to a PAH prostacyclin titration. CY2026 Medicare professional values (conversion factor <strong>$33.40</strong>). Companion to the <a href="index.html" style="color:#fff;text-decoration:underline">Critical Care (ICU)</a> reference.</p>
+        <p class="small" style="color:#d9e8e0">Educational reference for documentation improvement — not coding, legal, or financial advice, and not an official CMS/AMA product. Outpatient and especially <strong>telehealth</strong> rules change frequently; verify current CMS, your MAC, and Ohio policy before billing.</p>
+      </section>
+
+      <!-- HOW PAYMENT WORKS -->
+      <section>
+        <h2>How clinic payment works — no DRG, sometimes two claims</h2>
+        <p>The ICU page's facility <strong>DRG</strong> does not exist in clinic — there is no Part A inpatient bundle. Outpatient is paid on the <strong>Physician Fee Schedule (PFS)</strong>. The twist in an academic center: if your clinic is a hospital <strong>provider-based department</strong>, a <em>second</em> claim is generated — a hospital outpatient facility fee under <strong>OPPS</strong>.</p>
+        <div class="streams">
+          <div class="stream prof">
+            <div class="stream-h">Professional — that's you</div>
+            <div class="stream-sub">Medicare Part B &middot; Physician Fee Schedule &middot; CPT / E&amp;M codes</div>
+            <div class="stream-f">total RVU &times; $33.40 &times; GPCI &nbsp;|&nbsp; PE differs: <b>non-facility</b> (office) &gt; <b>facility</b> (provider-based)</div>
+          </div>
+          <div class="stream fac">
+            <div class="stream-h">Facility fee — only if provider-based</div>
+            <div class="stream-sub">Medicare Part B &middot; OPPS &middot; clinic-visit HCPCS G0463 + APCs</div>
+            <div class="stream-f">paid to the hospital for room, staff, supplies; patient may get a 2nd bill</div>
+          </div>
+        </div>
+        <p>Your professional dollars come from <strong>CPT / E&amp;M codes</strong> (work + practice expense + malpractice RVUs &times; the conversion factor, adjusted by local GPCI). The <strong>same code pays a different amount</strong> depending on place of service: in a freestanding office you bill the higher <em>non-facility</em> rate (your practice expense is baked in); in a provider-based clinic you bill the lower <em>facility</em> rate because the hospital separately collects the facility fee. That single fact drives most of the academic-clinic billing nuances below.</p>
+        <p class="badge-key small"><strong>How tags are used here:</strong>
+          <span class="b proc">Pulmonary-fit</span> especially relevant to subspecialty pulmonary
+          <span class="b cc">Academic</span> teaching-setting nuance
+          <span class="b mcc">$ lever</span> changes what's paid
+        </p>
+
+        <h3>Common questions</h3>
+        <details class="faq">
+          <summary>Why is my office E/M paid less when I move the same patient to the hospital-based clinic?</summary>
+          <div class="faq-body">
+            <p><strong>Because the practice-expense RVUs split out.</strong> In a freestanding office (POS 11) you bill the <em>non-facility</em> PFS rate, which bundles your overhead. In a provider-based/hospital outpatient clinic (POS 22 on-campus, 19 off-campus) you bill the lower <em>facility</em> PFS rate, and the hospital bills a separate OPPS facility fee (G0463) for the overhead.</p>
+            <p>The total dollars to the enterprise are often higher provider-based, but the <em>physician</em> line is lower, and the patient may face a separate facility-fee cost-share. This is a frequent source of confusion in academic departments.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>Does the patient get billed twice for one provider-based visit?</summary>
+          <div class="faq-body">
+            <p><strong>Often, yes — two cost-shares.</strong> One for the professional service (your PFS claim) and one for the hospital outpatient facility fee. Patients are frequently surprised by the facility line; many institutions provide advance notice. It does not change <em>your</em> coding, but it is worth understanding when patients ask.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>Can I bill a PFT (or an injection) on the same day as the office visit?</summary>
+          <div class="faq-body">
+            <p><strong>Usually yes, with modifier <span class="code">-25</span> on the E/M</strong> — if the E/M is a significant, separately identifiable service beyond the procedure's inherent pre/post work. The classic miss is performing spirometry and a biologic injection but forgetting the <span class="code">-25</span>, so the payer bundles the visit. See <a href="#pft">PFTs</a>, <a href="#infusions">Infusions</a>, and <a href="#modifiers">Modifiers</a>.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- SITE OF SERVICE -->
+      <section id="site">
+        <h2>Office vs provider-based clinic — the academic fork</h2>
+        <p>Most teaching pulmonary clinics are <strong>provider-based departments</strong> of the hospital, not freestanding offices. That single classification changes the place-of-service code, your professional payment rate, whether a facility fee is generated, and — critically — whether <strong>incident-to</strong> billing is even available.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>&nbsp;</th><th>Freestanding office</th><th>Provider-based clinic (HOPD)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Place of service</strong></td><td class="code">POS 11</td><td class="code">POS 22 (on-campus) / 19 (off-campus)</td></tr>
+            <tr><td><strong>Physician PFS rate</strong></td><td>Non-facility (higher — overhead included)</td><td>Facility (lower — overhead billed separately)</td></tr>
+            <tr><td><strong>Separate facility fee</strong></td><td>None</td><td>Hospital bills OPPS facility fee (G0463 + APCs)</td></tr>
+            <tr><td><strong>Incident-to billing</strong></td><td>Allowed if all conditions met</td><td><strong>Not allowed</strong> — use split/shared instead</td></tr>
+            <tr><td><strong>Telehealth originating-site facility fee</strong></td><td>n/a</td><td>Q3014 when the clinic hosts the patient end</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Know which one your clinic is before you reason about incident-to (<a href="#app">APPs</a>) or expected payment. When in doubt, ask your billing office for the clinic's POS and whether it is registered as provider-based.</p>
+      </section>
+
+      <!-- OFFICE E/M -->
+      <section id="em">
+        <h2>Office / outpatient E/M — 99202–99215</h2>
+        <p>Since 2021, outpatient office E/M is leveled by <strong>medical decision making (MDM)</strong> <em>or</em> <strong>total time on the date of the encounter</strong> — whichever is more favorable. History and exam are performed as clinically appropriate but no longer drive the level. Pick the path that fits the visit; for a long counseling or care-coordination visit, time usually wins; for a quick but cognitively complex decision, MDM wins.</p>
+
+        <h3>New patient (99202–99205) &amp; established (99211–99215)</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Patient</th><th>MDM</th><th>Total time (date of encounter)</th><th class="num">Work RVU</th><th class="num">~Non-facility Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">99202</td><td>New</td><td>Straightforward</td><td>15–29 min</td><td class="num">0.93</td><td class="num">$73</td></tr>
+            <tr><td class="code">99203</td><td>New</td><td>Low</td><td>30–44 min</td><td class="num">1.60</td><td class="num">$113</td></tr>
+            <tr><td class="code">99204</td><td>New</td><td>Moderate</td><td>45–59 min</td><td class="num">2.60</td><td class="num">$169</td></tr>
+            <tr><td class="code">99205</td><td>New</td><td>High</td><td>60–74 min</td><td class="num">3.50</td><td class="num">$224</td></tr>
+            <tr><td class="code">99211</td><td>Est.</td><td>Minimal (may not need physician)</td><td>—</td><td class="num">0.18</td><td class="num">$24</td></tr>
+            <tr><td class="code">99212</td><td>Est.</td><td>Straightforward</td><td>10–19 min</td><td class="num">0.70</td><td class="num">$58</td></tr>
+            <tr><td class="code">99213</td><td>Est.</td><td>Low</td><td>20–29 min</td><td class="num">1.30</td><td class="num">$94</td></tr>
+            <tr><td class="code">99214</td><td>Est.</td><td>Moderate</td><td>30–39 min</td><td class="num">1.92</td><td class="num">$132</td></tr>
+            <tr><td class="code">99215</td><td>Est.</td><td>High</td><td>40–54 min</td><td class="num">2.80</td><td class="num">$186</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Work RVUs are national CY2026 values; dollars are <strong>approximate national non-facility</strong> (total RVU &times; $33.40, rounded). In a <a href="#site">provider-based clinic</a> the physician line is paid at the lower <em>facility</em> rate. Local GPCI varies.</p>
+
+        <h3>What counts toward total time</h3>
+        <p>Total time = all the physician/QHP's time <strong>on the date of the encounter</strong>, face-to-face and not: reviewing the chart and outside records before the visit, the exam, counseling, ordering tests/meds, documenting in the EHR, and care coordination performed that day. It does <strong>not</strong> include time on a different calendar day, staff time, or time spent on a separately reported service (e.g., a PFT interpretation or an injection).</p>
+        <div class="smartphrase" id="sp-em-time" data-copy="Total time personally spent on the date of this encounter was ___ minutes, including pre-visit record review, the face-to-face visit, independent test interpretation, counseling and shared decision-making, ordering, care coordination, and documentation. This excludes any separately reported service.">
+          <button class="copybtn" data-target="sp-em-time">Copy</button>
+          <span class="lbl">Time-based attestation — use a real number, never a range</span>
+          &ldquo;Total time personally spent on the date of this encounter was ___ minutes, including pre-visit record review, the face-to-face visit, independent test interpretation, counseling and shared decision-making, ordering, care coordination, and documentation. This excludes any separately reported service.&rdquo;
+        </div>
+
+        <h3>MDM, with pulmonary examples (meet 2 of 3 columns)</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Level</th><th>Problems addressed</th><th>Data reviewed</th><th>Risk</th><th>Pulmonary example</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Low</strong><br>99203/99213</td><td>1 stable chronic; or 1 acute uncomplicated</td><td>Limited (e.g., review 2 tests; or independent historian)</td><td>Low</td><td>Stable mild persistent asthma, controlled, routine refill</td></tr>
+            <tr><td><strong>Moderate</strong><br>99204/99214</td><td>1 chronic w/ exacerbation; or 2+ stable chronic; or 1 new problem, uncertain prognosis</td><td>Moderate (e.g., 3 data elements; <em>independent interpretation</em> of a study; discuss mgmt with external clinician)</td><td>Moderate — <strong>prescription drug management</strong></td><td>COPD exacerbation needing steroids; newly found <strong>pulmonary nodule</strong>; inhaler/biologic adjustment</td></tr>
+            <tr><td><strong>High</strong><br>99205/99215</td><td>1 chronic w/ severe exacerbation/progression; or illness posing threat to life/bodily function</td><td>Extensive</td><td>High — e.g., <strong>drug therapy requiring intensive monitoring for toxicity</strong>; decision re hospitalization or escalation</td><td>Progressive ILD on immunosuppression; PAH on prostacyclin; severe exacerbation, deciding on admission</td></tr>
+          </tbody>
+        </table></div>
+        <p class="callout"><strong>Two pulmonary MDM levers worth knowing cold:</strong> (1) <em>Prescription drug management</em> — adjusting inhalers, starting prednisone, managing a biologic — is moderate risk on its own, supporting <strong>99214</strong>. (2) <em>Drug therapy requiring intensive monitoring for toxicity</em> (e.g., immunosuppressants for ILD, theophylline levels) is high risk, supporting <strong>99215</strong>. Document the drug and the monitoring.</p>
+
+        <h3>Prolonged outpatient time</h3>
+        <p>Past the top of the highest level, prolonged-service add-ons apply — but <strong>Medicare and CPT diverge</strong>:</p>
+        <ul>
+          <li><strong>CPT / most commercial: <span class="code">99417</span></strong> — each additional 15 min, added to 99205/99215, starting once you pass the level's minimum time (75 min for 99205, 55 min for 99215).</li>
+          <li><strong>Medicare: <span class="code">G2212</span></strong> — same idea, but the clock starts later (after the <em>maximum</em> time of the level: 89 min for 99205, 69 min for 99215). Do not report 99417 to Medicare.</li>
+        </ul>
+        <p class="small">Confirm the current thresholds and your payer's choice; this pair is a common audit target.</p>
+      </section>
+
+      <!-- TEACHING PHYSICIAN & LEARNERS -->
+      <section id="learners">
+        <h2>Teaching physician rules &amp; learners charting</h2>
+        <p>In an academic clinic the chart may be touched by a <strong>fellow</strong>, a <strong>resident</strong>, or a <strong>medical/APP student</strong> before you sign. Each has different documentation rules. <strong>Pulmonary fellows are residents</strong> for Medicare teaching-physician (TP) purposes — they fall under TP rules, not split/shared.</p>
+
+        <h3>Residents &amp; fellows — Teaching Physician (TP) rules</h3>
+        <ul>
+          <li>The service is billed under the <strong>teaching physician</strong>. The TP must <strong>personally see the patient</strong> and personally perform (or be present for) the portion of the service that determines the level.</li>
+          <li><strong>If leveling by MDM:</strong> the TP may <em>verify</em> the resident's documentation (history, exam, MDM) rather than re-document it, but must personally participate in management and indicate that in the note.</li>
+          <li><strong>If leveling by time:</strong> only the <strong>teaching physician's time</strong> (alone, or with the resident together) counts. <em>Resident-alone time does not count</em> — a key contrast with APP split/shared, where both clinicians' time combines.</li>
+          <li>Append modifier <strong>GC</strong> when a resident/fellow participated.</li>
+        </ul>
+        <div class="smartphrase" id="sp-tp" data-copy="I personally saw and evaluated the patient with the fellow/resident. I reviewed the fellow's/resident's documented history, exam, and assessment, agree with them except as noted, and personally performed the medical decision-making for today's visit, including the plan documented below. (Time-based visits: only my personal time is counted toward the total.)">
+          <button class="copybtn" data-target="sp-tp">Copy</button>
+          <span class="lbl">Teaching physician clinic attestation</span>
+          &ldquo;I personally saw and evaluated the patient with the fellow/resident. I reviewed the fellow's/resident's documented history, exam, and assessment, agree with them except as noted, and personally performed the medical decision-making for today's visit, including the plan documented below. (Time-based visits: only my personal time is counted toward the total.)&rdquo;
+        </div>
+
+        <h3>Medical / PA / NP students</h3>
+        <ul>
+          <li>Since 2018, the TP (or the resident) may <strong>verify</strong> any student-documented component — <strong>ROS, PMH/social/family history, HPI, and exam</strong> — and need not re-document it.</li>
+          <li>But the TP must <strong>personally perform (or re-perform) the exam and the MDM</strong> and personally verify what the student wrote. Student documentation can support, not substitute for, the billable work.</li>
+        </ul>
+
+        <h3>The Primary Care Exception — usually NOT your clinic</h3>
+        <p>At <strong>approved primary-care centers</strong>, the Primary Care Exception (PCE) lets the TP bill certain lower/mid-level visits (99202–99204, 99212–99214 and select preventive codes) <em>without</em> being present for the key portion, using modifier <strong>GE</strong>. <strong>A subspecialty pulmonary clinic generally does not qualify</strong> — assume standard TP presence rules apply and use GC, not GE, unless your GME/compliance office has specifically designated the site.</p>
+
+        <h3>Quick decision guide</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>You're precepting…</th><th>Whose time counts (time-based)</th><th>Who bills</th><th>Modifier</th></tr></thead>
+          <tbody>
+            <tr><td>A fellow or resident</td><td>Teaching physician's time only</td><td>Teaching physician</td><td class="code">GC</td></tr>
+            <tr><td>A student (with you/resident)</td><td>TP/resident time; student time never counts</td><td>Teaching physician</td><td class="code">GC</td></tr>
+            <tr><td>An APP in your group</td><td>Physician + APP time combine (see below)</td><td>Substantive-portion clinician</td><td class="code">FS</td></tr>
+            <tr><td>PCE-approved primary care only</td><td>n/a — TP need not be present</td><td>Teaching physician</td><td class="code">GE</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Medicare rules; teaching-physician documentation policy is in the Medicare Claims Processing Manual ch. 12 §100. Commercial payers may differ.</p>
+      </section>
+
+      <!-- APPs -->
+      <section id="app">
+        <h2>APPs — incident-to vs split/shared</h2>
+        <p>For NPs and PAs, the right rule depends entirely on <a href="#site">where the clinic sits</a>. Getting this wrong is both a payment error and a compliance risk.</p>
+
+        <h3>Freestanding office (POS 11) — incident-to is possible</h3>
+        <ul>
+          <li>An APP's service can bill under the <strong>physician's NPI at 100%</strong> if <em>all</em> incident-to conditions are met: the physician initiated care and set the plan, the patient is <strong>established with an established problem</strong>, the physician provides <strong>direct supervision</strong> (present in the office suite, immediately available), and the encounter is an integral part of the plan.</li>
+          <li><strong>New patients and new problems cannot be incident-to.</strong> Those bill under the APP's own NPI at <strong>85%</strong>.</li>
+        </ul>
+
+        <h3>Provider-based / hospital outpatient clinic — incident-to does NOT apply</h3>
+        <ul>
+          <li>In the facility setting, incident-to is unavailable. Either the APP bills under their <strong>own NPI (~85%)</strong>, or — when a physician <em>and</em> APP in the same group both personally perform part of the <em>same</em> visit on the same day — <strong>split/shared</strong> rules apply.</li>
+          <li><strong>Split/shared:</strong> the clinician who performs the <strong>substantive portion</strong> bills. For visits leveled by <em>time</em>, substantive = &gt;50% of the combined time; for visits leveled by <em>MDM</em>, substantive = performed the MDM (confirm the current year's definition — CMS has shifted it). Append modifier <strong>FS</strong>.</li>
+        </ul>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Setting</th><th>Incident-to?</th><th>If not, how it bills</th><th>Modifier</th></tr></thead>
+          <tbody>
+            <tr><td>Freestanding office, established pt + problem, MD in suite</td><td><strong>Yes</strong> — MD NPI, 100%</td><td>—</td><td>(none)</td></tr>
+            <tr><td>Freestanding office, new pt or new problem</td><td>No</td><td>APP NPI, ~85%</td><td>(none)</td></tr>
+            <tr><td>Provider-based clinic, APP alone</td><td>No</td><td>APP NPI, ~85%</td><td>(none)</td></tr>
+            <tr><td>Provider-based clinic, MD + APP same visit</td><td>No</td><td>Split/shared — substantive-portion clinician bills</td><td class="code">FS</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Document both individuals by name, each one's role/time, and who did the substantive portion. The billing clinician signs and dates.</p>
+      </section>
+
+      <!-- TELEHEALTH -->
+      <section id="telehealth">
+        <h2>Telehealth — Ohio-specific</h2>
+        <p>Pulmonary is well-suited to telehealth for the right visits — PAP/CPAP adherence, stable ILD / PAH / sarcoidosis follow-up, post-discharge COPD checks, biologic-therapy management, tobacco cessation — while PFTs and exam-dependent encounters still need an in-person slot. Three layers of rules stack here: <strong>Medicare</strong>, the <strong>CPT code set</strong>, and <strong>Ohio</strong> (Medicaid + the state standard-of-care statute).</p>
+
+        <p class="callout warn"><strong>Volatility warning.</strong> Medicare's telehealth flexibilities have repeatedly approached a &ldquo;cliff&rdquo; and been extended at the last minute (most recently they lapsed 31 Jan 2026, then the Consolidated Appropriations Act, 2026 — signed 3 Feb 2026 — restored and extended them). <strong>Confirm the current expiration date and your MAC's guidance before relying on any item here.</strong></p>
+
+        <h3>1) Medicare (as extended for 2026)</h3>
+        <ul>
+          <li><strong>No geographic restriction; the patient's home is an eligible originating site</strong> for non-behavioral telehealth — extended <strong>through Dec 31, 2027</strong>.</li>
+          <li><strong>Audio-only</strong> is permitted for non-behavioral telehealth through Dec 31, 2027 (when the patient can't or won't use video). Behavioral/mental-health visits keep their own in-person-waiver track (through Jan 1, 2028).</li>
+          <li><strong>Coding for Medicare:</strong> report the usual office E/M (<span class="code">99202–99215</span>) with <strong>POS 10</strong> (telehealth, patient at home) or <strong>POS 02</strong> (telehealth, location other than home), plus modifier <strong>95</strong> (synchronous audio-video) or <strong>93</strong> (audio-only).</li>
+          <li><strong>Medicare does NOT accept the new 98000–98015 telemedicine codes</strong> — it kept the office-E/M-plus-modifier approach. It <em>does</em> recognize <span class="code">98016</span> (brief virtual check-in).</li>
+        </ul>
+
+        <h3>2) The CPT telemedicine codes (CY2025+) — for non-Medicare payers</h3>
+        <ul>
+          <li>AMA added a dedicated series that <strong>replaced the deleted telephone codes 99441–99443</strong>: <span class="code">98000–98007</span> synchronous <strong>audio-video</strong>, <span class="code">98008–98015</span> synchronous <strong>audio-only</strong>, and <span class="code">98016</span> brief synchronous check-in (5–10 min).</li>
+          <li>Some commercial and Medicaid plans want these codes; <strong>Medicare wants the office E/M + modifier 95/93 instead.</strong> Check each payer.</li>
+        </ul>
+
+        <h3>3) Ohio</h3>
+        <ul>
+          <li><strong>Ohio Medicaid — OAC 5160-1-18</strong> (in effect since 15 Jul 2022): telehealth means synchronous real-time <strong>audio + video</strong> (plus defined asynchronous activities). <strong>No geographic restriction — the patient can be anywhere, including home.</strong> Note ODM has <em>not</em> adopted modifier 93 for audio-only; follow ODM's current billing guidelines for how it wants audio-only and the 98000-series reported.</li>
+          <li><strong>Ohio standard-of-care statute — ORC 4743.09</strong> (from HB 122, effective 23 Mar 2022): the standard of care via telehealth must <strong>equal in-person</strong> care, and a <strong>provider–patient relationship may be established by telehealth</strong> (synchronous or asynchronous) if that standard is met. Implemented across the licensing boards (e.g., State Medical Board rules, OAC 4731-37-01).</li>
+          <li><strong>Licensure follows the patient.</strong> You must be licensed in the state where the <em>patient is physically located</em> at the time of service — relevant for a referral region that crosses into KY/WV/IN/PA/MI. The Interstate Medical Licensure Compact can speed multistate licensure.</li>
+        </ul>
+
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Scenario</th><th>Code</th><th>POS</th><th>Modifier</th></tr></thead>
+          <tbody>
+            <tr><td>Medicare, patient at home, audio-video</td><td class="code">99213/99214…</td><td class="code">10</td><td class="code">95</td></tr>
+            <tr><td>Medicare, patient elsewhere, audio-video</td><td class="code">99213/99214…</td><td class="code">02</td><td class="code">95</td></tr>
+            <tr><td>Medicare, audio-only (non-behavioral)</td><td class="code">99213/99214…</td><td class="code">10 / 02</td><td class="code">93</td></tr>
+            <tr><td>Commercial/Medicaid wanting CPT telemedicine codes</td><td class="code">98000–98015</td><td>per payer</td><td>per payer</td></tr>
+            <tr><td>Brief virtual check-in (incl. Medicare)</td><td class="code">98016</td><td>per payer</td><td>—</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">When the provider-based clinic <em>hosts</em> the patient end of a telehealth visit, the hospital may bill the originating-site facility fee <span class="code">Q3014</span>. Always document the patient's physical location and the modality (audio-video vs audio-only).</p>
+      </section>
+
+      <!-- E-CONSULTS -->
+      <section id="econsult">
+        <h2>E-consults &amp; virtual check-ins</h2>
+        <p>Interprofessional consultation lets a pulmonologist weigh in on a case <strong>without a face-to-face visit</strong> — review the chart/imaging, render an opinion to the requesting clinician, and bill for the cognitive work. Common pulmonary e-consults: an incidental lung nodule, abnormal PFTs, chronic cough, pre-operative risk, or an abnormal chest CT.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Who reports</th><th>Service</th><th class="num">Time</th><th class="num">wRVU</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">99446</td><td>Consultant (you)</td><td>Interprofessional consult, verbal &amp; written report</td><td class="num">5–10 min</td><td class="num">0.35</td><td class="num">$18</td></tr>
+            <tr><td class="code">99447</td><td>Consultant</td><td>…verbal &amp; written report</td><td class="num">11–20 min</td><td class="num">0.70</td><td class="num">$37</td></tr>
+            <tr><td class="code">99448</td><td>Consultant</td><td>…verbal &amp; written report</td><td class="num">21–30 min</td><td class="num">1.05</td><td class="num">$56</td></tr>
+            <tr><td class="code">99449</td><td>Consultant</td><td>…verbal &amp; written report</td><td class="num">31+ min</td><td class="num">1.40</td><td class="num">$74</td></tr>
+            <tr><td class="code">99451</td><td>Consultant</td><td>Interprofessional consult, <strong>written report only</strong> (the EHR e-consult)</td><td class="num">5+ min</td><td class="num">0.70</td><td class="num">$38</td></tr>
+            <tr><td class="code">99452</td><td>Requesting clinician</td><td>Time preparing for / referring for the consult</td><td class="num">16–30 min</td><td class="num">0.70</td><td class="num">$37</td></tr>
+          </tbody>
+        </table></div>
+        <h3>Requirements that make these payable</h3>
+        <ul>
+          <li><strong>Patient consent documented</strong> (these carry cost-sharing) and the <strong>request documented</strong> in the record.</li>
+          <li>You have <strong>not seen the patient in person in the prior 14 days</strong>, and the consult does <strong>not lead to a transfer or face-to-face visit within the next 14 days</strong> (otherwise bill the visit instead).</li>
+          <li>For the timed verbal codes, <strong>&gt;50% of the time is the medical consultative discussion/review</strong>; report your review + report time.</li>
+        </ul>
+        <p>Related brief communication-technology services: <span class="code">G2012</span>/<span class="code">98016</span> virtual check-in (5–10 min), and <span class="code">G2010</span> remote evaluation of patient-submitted images/video (e.g., a photo of a home spirometry trace or inhaler technique).</p>
+        <p class="small"><span class="b proc">Pulmonary-fit</span> E-consults shine for nodule triage and PFT interpretation, cutting wait times for a full visit; document consent, the question asked, your review, and your written recommendation.</p>
+      </section>
+
+      <!-- E-VISITS / PORTAL MESSAGES -->
+      <section id="evisit">
+        <h2>E-visits — patient-portal / MyChart messages</h2>
+        <p><strong>Yes — billable.</strong> When a patient sends a message through the portal (MyChart) that needs real clinical work to answer, that asynchronous, <strong>patient-initiated</strong> exchange can be billed as an <strong>online digital E/M</strong> (&ldquo;e-visit&rdquo;). It is not for clerical or quick replies — it has to involve genuine evaluation and medical decision-making.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Cumulative time over 7 days</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">99421</td><td>5–10 min</td><td class="num">~$15</td></tr>
+            <tr><td class="code">99422</td><td>11–20 min</td><td class="num">~$31</td></tr>
+            <tr><td class="code">99423</td><td>21+ min</td><td class="num">~$50</td></tr>
+          </tbody>
+        </table></div>
+        <h3>The guardrails that decide whether it's billable</h3>
+        <ul>
+          <li><strong>Patient-initiated</strong> and an <strong>established patient</strong> — you can't bill a message you started, and these aren't for new patients.</li>
+          <li><strong>Requires your medical decision-making.</strong> A refill done by protocol, a scheduling reply, or &ldquo;your results look fine&rdquo; with no decision doesn't qualify.</li>
+          <li><strong>Counts cumulative time over a 7-day period</strong> (all your portal work on the issue, including review and the response), reported <strong>once</strong> per 7 days.</li>
+          <li><strong>Bundling windows:</strong> not billable if it stems from an E/M in the <strong>prior 7 days</strong> (it's part of that visit's work); and if it leads to an office/telehealth visit within the <strong>next 7 days</strong>, the e-visit work rolls into that visit. Not billed on the same day as another E/M.</li>
+          <li><strong>Consent</strong> to possible cost-sharing is documented (commonly a one-time portal consent).</li>
+        </ul>
+        <p class="small"><span class="b proc">Pulmonary-fit</span> Example: an established asthma/COPD patient messages about worsening dyspnea and peak-flow readings; you review the trend, adjust the inhaler regimen, and document the decision — that's an e-visit, not a free message. Clinical staff who can't independently bill E/M use the non-physician equivalents <span class="code">98970–98972</span>.</p>
+      </section>
+
+      <!-- REMOTE MONITORING -->
+      <section id="monitoring">
+        <h2>Remote monitoring — RPM &amp; RTM</h2>
+        <p>Two parallel families let you bill for managing device-transmitted data between visits. <strong>RPM</strong> covers <em>physiologic</em> data (pulse oximetry, home spirometry/peak flow, BP); <strong>RTM</strong> covers <em>therapeutic</em> data including the <em>respiratory system</em> (inhaler/PAP adherence, symptom logs).</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Family</th><th class="code">CPT</th><th>What it pays for</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td><strong>RPM</strong></td><td class="code">99453</td><td>Setup &amp; patient education on the device (one-time)</td><td class="num">~$19</td></tr>
+            <tr><td>RPM</td><td class="code">99454</td><td>Device supply &amp; daily readings, each 30 days (≥16 days of data)</td><td class="num">~$44/mo</td></tr>
+            <tr><td>RPM</td><td class="code">99457 / 99458</td><td>Management, first 20 min / each additional 20 min per month</td><td class="num">~$48 / ~$39</td></tr>
+            <tr><td><strong>RTM (respiratory)</strong></td><td class="code">98975 / 98976</td><td>Setup; device supply for <strong>respiratory system</strong> monitoring, each 30 days</td><td class="num">~$20 / ~$44/mo</td></tr>
+            <tr><td>RTM</td><td class="code">98980 / 98981</td><td>Management, first 20 min / each additional 20 min per month</td><td class="num">~$50 / ~$40</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small"><span class="b proc">Pulmonary-fit</span> Home pulse-ox or peak-flow trending (RPM) and PAP/inhaler adherence (RTM 98976) fit chronic COPD, severe asthma, and post-discharge programs. Require patient consent, an established condition, and the monthly time/data thresholds; do not double-count the same time under another care-management code in the same month.</p>
+      </section>
+
+      <!-- TCM -->
+      <section id="tcm">
+        <h2>Transitional care — the post-discharge window</h2>
+        <p>After a hospitalization (COPD or asthma exacerbation, pneumonia, PE), <strong>Transitional Care Management</strong> pays well for owning the 30-day transition. It requires an <strong>interactive contact within 2 business days</strong> of discharge and a <strong>face-to-face visit</strong> within a window set by complexity.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>MDM</th><th>Face-to-face visit by…</th><th class="num">Work RVU</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">99495</td><td>Moderate</td><td>Within 14 days of discharge</td><td class="num">2.78</td><td class="num">$201</td></tr>
+            <tr><td class="code">99496</td><td>High</td><td>Within 7 days of discharge</td><td class="num">3.79</td><td class="num">$273</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">One TCM per beneficiary per 30-day period, billed at the end of the window. The 2-business-day contact can be by phone or portal (by clinical staff). Document the discharge date, the contact, medication reconciliation, and the face-to-face date. Strong fit for a post-exacerbation pulmonary follow-up.</p>
+      </section>
+
+      <!-- CCM / PCM -->
+      <section id="ccm">
+        <h2>Chronic &amp; principal care management</h2>
+        <p>Between visits, ongoing care coordination is billable monthly. <strong>CCM</strong> needs <strong>≥2</strong> chronic conditions; <strong>PCM</strong> is built for a <strong>single, complex, high-risk condition</strong> — which is exactly the subspecialty pulmonary situation (advanced COPD, severe persistent asthma, ILD, pulmonary hypertension).</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Program</th><th class="code">CPT</th><th>Who / time per month</th><th class="num">~Medicare/mo</th></tr></thead>
+          <tbody>
+            <tr><td><strong>CCM</strong> (≥2 chronic conditions)</td><td class="code">99490 / 99439</td><td>Clinical staff, first 20 min / each additional 20 min</td><td class="num">$60 / $46</td></tr>
+            <tr><td>CCM, physician/QHP time</td><td class="code">99491 / 99437</td><td>Physician/QHP, first 30 min / each additional 30 min</td><td class="num">$82 / ~$59</td></tr>
+            <tr><td><strong>PCM</strong> (single complex condition)</td><td class="code">99424 / 99425</td><td>Physician/QHP, first 30 min / each additional 30 min</td><td class="num">$83 / $60</td></tr>
+            <tr><td>PCM, clinical staff time</td><td class="code">99426 / 99427</td><td>Clinical staff, first 30 min / each additional 30 min</td><td class="num">$68 / $54</td></tr>
+          </tbody>
+        </table></div>
+        <p class="callout"><span class="b proc">Pulmonary-fit</span> <strong>PCM (99424/99426)</strong> is the natural fit when one pulmonary condition drives the patient's risk — e.g., a PAH patient on parenteral prostacyclin, or severe COPD with frequent exacerbations — without needing a second qualifying chronic illness.</p>
+
+        <h3>When to bill — and yes, it's the <em>between-visit</em> work</h3>
+        <p>This is the point most often missed: CCM/PCM pays for the <strong>non-face-to-face care you do <em>between</em> office visits</strong> — medication management, reviewing home data and outside results, phone calls, refills, prior auths, and coordinating with the PCP, pharmacy, or home-infusion company. It is <strong>not</strong> a visit code and does not require the patient to be in the room.</p>
+        <ul>
+          <li><strong>Billed once per calendar month</strong>, submitted at month-end once that month's <strong>time threshold</strong> is met — CCM <span class="code">99490</span> ≥20 min clinical-staff time (or <span class="code">99491</span> ≥30 min physician/QHP); PCM <span class="code">99424</span> ≥30 min physician/QHP (or <span class="code">99426</span> ≥30 min clinical staff). Time is <strong>cumulative across the month</strong>; add-on codes capture each additional increment.</li>
+          <li><strong>No double-counting.</strong> Minutes already counted toward a billed E/M, TCM, the same month's other care-management code, or RPM/RTM management time can't also be counted here.</li>
+          <li><strong>One practitioner per patient per month.</strong> A patient can't be billed CCM <em>and</em> PCM in the same month by the same practitioner — coordinate with primary care so you're not duplicating (often pulmonary bills PCM for the lung condition while PCP handles overall CCM, but only one care-management code pays per month).</li>
+        </ul>
+
+        <h3>Documentation needed to bill</h3>
+        <ul>
+          <li><strong>Patient consent</strong> — obtained once (until they change practitioner), documented in the record, noting that cost-sharing applies, that only one practitioner bills per month, and that they may stop anytime.</li>
+          <li><strong>A care plan in the EHR</strong> — comprehensive (CCM) or condition-specific (PCM), shared with the patient and revised over time.</li>
+          <li><strong>A time log</strong> of the month's care-coordination activities (who, what, minutes).</li>
+          <li><strong>The qualifying condition(s)</strong> — CCM: <strong>≥2</strong> chronic conditions expected to last ≥12 months (or until death) placing the patient at significant risk; PCM: <strong>one</strong> complex condition expected to last ≥3 months with frequent medication/regimen adjustment.</li>
+          <li><strong>24/7 access</strong> to the care team and continuity of care arrangement.</li>
+        </ul>
+
+        <details class="faq">
+          <summary>So is this billable between office visits, even in a month with no visit?</summary>
+          <div class="faq-body">
+            <p><strong>Yes — that's exactly what it's for.</strong> If your team accrues the monthly time threshold managing the qualifying condition(s) outside of a visit, you bill CCM/PCM for that month <em>whether or not</em> the patient was seen. In a month that also has an office visit, you can bill both — just don't count the visit's time (or any other separately billed time) toward the care-management minutes.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- ACP / TOBACCO -->
+      <section id="acp">
+        <h2>Advance care planning &amp; tobacco cessation</h2>
+        <h3>Advance care planning (ACP)</h3>
+        <p>Goals-of-care conversations are billable and clinically central in advanced ILD, end-stage COPD, and PAH.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Service</th><th class="num">Time</th><th class="num">wRVU</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">99497</td><td>Advance care planning, first 30 min (face-to-face, patient/family/surrogate)</td><td class="num">first 30 min</td><td class="num">1.50</td><td class="num">~$80</td></tr>
+            <tr><td class="code">99498</td><td>Advance care planning, each additional 30 min</td><td class="num">+30 min</td><td class="num">1.40</td><td class="num">~$70</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Time-based; document the discussion (no completed directive required). May be reported same day as an E/M with the time carved out; Medicare waives cost-sharing when furnished with the Annual Wellness Visit.</p>
+
+        <h3>Tobacco / nicotine cessation counseling</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Service</th><th class="num">Time</th><th class="num">wRVU</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">99406</td><td>Smoking/tobacco cessation counseling, intermediate</td><td class="num">3–10 min</td><td class="num">0.24</td><td class="num">~$15</td></tr>
+            <tr><td class="code">99407</td><td>Smoking/tobacco cessation counseling, intensive</td><td class="num">&gt;10 min</td><td class="num">0.50</td><td class="num">~$28</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Separately reportable with an E/M (carve the counseling minutes out of E/M time and append <span class="code">-25</span> to the E/M). Document minutes and content. Vaping/e-cigarette counseling is captured here as well.</p>
+      </section>
+
+      <!-- PFT -->
+      <section id="pft">
+        <h2>PFTs &amp; pulmonary diagnostics — and the component split</h2>
+        <p>The defining academic-clinic billing question for diagnostics: <strong>who owns the equipment?</strong> Each test has a <em>technical</em> component (running it) and a <em>professional</em> component (interpreting it). In a provider-based pulmonary lab the <strong>hospital bills the technical side (-TC) under OPPS</strong> and the physician bills only the <strong>interpretation (-26)</strong>. In a freestanding office that owns the equipment, you bill the <strong>global</strong> code (no modifier).</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Test</th><th class="num">wRVU</th><th class="num">~Medicare (global)</th></tr></thead>
+          <tbody>
+            <tr><td class="code">94010</td><td>Spirometry</td><td class="num">0.17</td><td class="num">~$27</td></tr>
+            <tr><td class="code">94060</td><td>Spirometry pre/post bronchodilator (reversibility)</td><td class="num">0.31</td><td class="num">~$38</td></tr>
+            <tr><td class="code">94070</td><td>Bronchoprovocation (e.g., methacholine), multiple spirometry</td><td class="num">0.45</td><td class="num">~$61</td></tr>
+            <tr><td class="code">94375</td><td>Flow-volume loop</td><td class="num">—</td><td class="num">bundled*</td></tr>
+            <tr><td class="code">94726</td><td>Plethysmography (lung volumes / airway resistance)</td><td class="num">0.21</td><td class="num">~$55</td></tr>
+            <tr><td class="code">94727</td><td>Lung volumes by gas dilution/washout</td><td class="num">0.18</td><td class="num">~$44</td></tr>
+            <tr><td class="code">94728</td><td>Airway resistance by oscillometry</td><td class="num">0.22</td><td class="num">~$45</td></tr>
+            <tr><td class="code">94729</td><td>Diffusing capacity (DLCO) — add-on</td><td class="num">0.17</td><td class="num">~$54</td></tr>
+            <tr><td class="code">94617 / 94618</td><td>Exercise test for bronchospasm / pulmonary stress (incl. 6-minute walk-type)</td><td class="num">0.45</td><td class="num">~$87 / ~$55</td></tr>
+            <tr><td class="code">94621</td><td><strong>CPET</strong> — comprehensive cardiopulmonary exercise test (VO₂, VCO₂, V̇E + ECG)</td><td class="num">1.95</td><td class="num">~$150</td></tr>
+            <tr><td class="code">94452 / 94453</td><td><strong>HAST</strong> — high-altitude (hypoxia) simulation test for air-travel/altitude clearance; <span class="code">94452</span> base, <span class="code">94453</span> with supplemental-O₂ titration</td><td class="num">varies</td><td class="num">verify MAC</td></tr>
+            <tr><td class="code">95012</td><td>Exhaled nitric oxide (FeNO) — asthma phenotyping</td><td class="num">0.07</td><td class="num">~$18</td></tr>
+            <tr><td class="code">94640 / 94664</td><td>Nebulizer treatment / inhaler-device instruction</td><td class="num">0.00</td><td class="num">~$18 ea</td></tr>
+            <tr><td class="code">82803</td><td>Arterial blood gases</td><td class="num">—</td><td class="num">lab fee sch.</td></tr>
+          </tbody>
+        </table></div>
+        <p class="callout warn"><strong>Two recurring traps.</strong> (1) In a provider-based lab, <strong>don't bill the global code</strong> — bill <span class="code">-26</span> only, or you'll be denied/recouped for the technical component the hospital already billed. (2) When you also perform a significant E/M the same day, append <strong><span class="code">-25</span></strong> to the E/M or the visit gets bundled into the PFT.</p>
+        <p class="small"><strong>How to read the dollars:</strong> these are <em>approximate national <u>global</u> (non-facility)</em> amounts (CY2026 CF $33.40). A <a href="#site">provider-based</a> lab bills the professional component (<span class="code">-26</span>) <strong>only</strong> — a fraction of the global — while the hospital bills the technical side. wRVUs are the small professional-component work values (≈0 for purely technical tests like nebulizer 94640/94664). <strong>*</strong> Flow-volume loop (94375) is bundled into spirometry; ABG (82803) pays on the clinical lab fee schedule, not the PFS; HAST coverage/payment is MAC-variable. Pulse oximetry (<span class="code">94760/94761</span>) is generally bundled into the E/M. DLCO (94729) is an add-on. CPET (94621) bundles its component services (ECG, oximetry, spirometric parameters, VO₂/VCO₂) — don't unbundle them. Verify each code's component eligibility, payment, and NCCI edits on the CMS PFS Look-Up Tool.</p>
+      </section>
+
+      <!-- INFUSIONS -->
+      <section id="infusions">
+        <h2>Infusions, injections &amp; biologics</h2>
+        <p>The severe-asthma biologics and PAH therapies make drug administration a real revenue and documentation area. Two separate things are billed: the <strong>administration code</strong> (the act) and the <strong>drug itself</strong> (a HCPCS J-code, usually buy-and-bill).</p>
+
+        <h3>Administration hierarchy — one &ldquo;initial&rdquo; per encounter</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Administration</th><th class="num">wRVU</th></tr></thead>
+          <tbody>
+            <tr><td class="code">96365 / 96366</td><td>IV infusion, initial up to 1 hr / each additional hour</td><td class="num">0.21 / 0.18</td></tr>
+            <tr><td class="code">96367 / 96368</td><td>Additional sequential / concurrent IV infusion (new drug)</td><td class="num">0.19 / 0.17</td></tr>
+            <tr><td class="code">96374 / 96375</td><td>IV push, initial / each additional sequential push (different drug)</td><td class="num">0.18 / 0.10</td></tr>
+            <tr><td class="code">96372</td><td>Therapeutic subcutaneous / intramuscular injection</td><td class="num">0.17</td></tr>
+            <tr><td class="code">96360 / 96361</td><td>IV hydration, initial 31 min–1 hr / each additional hour</td><td class="num">0.17 / 0.09</td></tr>
+          </tbody>
+        </table></div>
+        <p>Report <strong>only one &ldquo;initial&rdquo; code per encounter per IV access</strong>, and the &ldquo;initial&rdquo; is the <em>primary reason</em> for the encounter — not whatever happened to run first. Layer additional-hour / sequential / concurrent codes on top. Carve administration time out of any E/M time.</p>
+        <p class="small">Administration codes carry tiny work RVUs — the payment is almost entirely <strong>practice expense</strong>, so the dollar amount swings sharply between <a href="#site">office (non-facility)</a> and provider-based (facility, where the hospital bills the facility fee). The <strong>drug</strong> is paid <em>separately</em> from its J-code at roughly ASP + 6% (buy-and-bill); that drug payment, not the administration code, is where the dollars are.</p>
+
+        <h3>Common pulmonary agents</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Drug (class)</th><th>Route</th><th>Administration code</th></tr></thead>
+          <tbody>
+            <tr><td>Omalizumab, mepolizumab, benralizumab, dupilumab, tezepelumab (severe asthma biologics)</td><td>Subcutaneous</td><td class="code">96372</td></tr>
+            <tr><td>Reslizumab (severe eosinophilic asthma)</td><td>IV infusion (weight-based)</td><td class="code">96365 (+96366)</td></tr>
+            <tr><td>IVIG (selected ILD / immunodeficiency)</td><td>IV infusion</td><td class="code">96365 + 96366</td></tr>
+            <tr><td>Prostacyclins — epoprostenol, treprostinil (PAH)</td><td>IV / SC continuous (specialty/home; clinic initiation &amp; titration)</td><td class="code">per protocol</td></tr>
+          </tbody>
+        </table></div>
+        <p class="callout"><strong>Bill the drug separately</strong> with its HCPCS <strong>J-code</strong> and document <strong>drug, dose, and units administered</strong>, plus <strong>wastage</strong>: append <span class="code">JW</span> for the discarded amount of a single-dose vial, or <span class="code">JZ</span> to attest <em>no</em> wastage. <span class="b proc">Pulmonary-fit</span> Most asthma biologics are <strong>subcutaneous (96372)</strong>; reslizumab and IVIG are IV infusions. <a href="#site">Provider-based</a> status materially changes infusion economics (facility fee + drug handling).</p>
+        <p class="small">If a significant, separately identifiable E/M (e.g., the assessment deciding to continue/adjust the biologic) is done the same day, append <span class="code">-25</span> to the E/M. J-codes update frequently — verify the current HCPCS before billing.</p>
+      </section>
+
+      <!-- REHAB / SLEEP -->
+      <section id="rehab">
+        <h2>Pulmonary rehab &amp; sleep</h2>
+        <h3>Pulmonary rehabilitation</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">Code</th><th>Service</th></tr></thead>
+          <tbody>
+            <tr><td class="code">G0424</td><td>Pulmonary rehab, hospital outpatient, per session (incl. exercise, education, monitoring)</td></tr>
+            <tr><td class="code">94625</td><td>Physician/QHP-directed outpatient pulmonary rehab, <em>without</em> continuous oximetry</td></tr>
+            <tr><td class="code">94626</td><td>…<em>with</em> continuous oximetry</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Coverage typically targets moderate-to-very-severe COPD (and other qualifying diagnoses); document the qualifying diagnosis, the individualized treatment plan, and per-session components. G0424 is the hospital-based (provider-based) route; 94625/94626 are the physician-practice codes (added 2022).</p>
+
+        <h3>Sleep</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">Code</th><th>Service</th></tr></thead>
+          <tbody>
+            <tr><td class="code">95810 / 95811</td><td>Attended in-lab polysomnography / PSG with PAP titration</td></tr>
+            <tr><td class="code">95806 / G0399</td><td>Home sleep apnea test (unattended, type III)</td></tr>
+            <tr><td class="code">94660</td><td>CPAP initiation &amp; management</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Sleep studies also split into professional (-26) and technical components in a provider-based lab. Document the indication, AHI/RDI, and titration outcome; OSA follow-up and PAP adherence visits are ordinary office E/M (and good telehealth candidates).</p>
+      </section>
+
+      <!-- MODIFIERS -->
+      <section id="modifiers">
+        <h2>Clinic modifiers that matter</h2>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">Modifier</th><th>Use it when</th></tr></thead>
+          <tbody>
+            <tr><td class="code">-25</td><td>A significant, separately identifiable E/M is performed the same day as a procedure, PFT, injection, or counseling. Append to the <strong>E/M</strong>.</td></tr>
+            <tr><td class="code">-59 / XE,XS,XU</td><td>Two normally bundled services (per NCCI) were distinct — separate sessions, sites, or encounters.</td></tr>
+            <tr><td class="code">-26 / -TC</td><td>Professional (interpretation) vs technical (equipment) component — the core PFT/sleep split in a provider-based lab.</td></tr>
+            <tr><td class="code">95 / 93</td><td>Synchronous telehealth: audio-video (95) vs audio-only (93). Pair with POS 10 (home) or 02.</td></tr>
+            <tr><td class="code">FS</td><td>Split/shared visit between a physician and an APP in a facility setting.</td></tr>
+            <tr><td class="code">GC</td><td>Service performed in part by a resident/fellow under teaching-physician direction.</td></tr>
+            <tr><td class="code">GE</td><td>Primary Care Exception (resident without TP present) — <strong>generally not</strong> a subspecialty pulmonary clinic.</td></tr>
+            <tr><td class="code">JW / JZ</td><td>Discarded drug amount (JW) / attestation of no wastage (JZ) on a single-dose vial.</td></tr>
+            <tr><td class="code">-76 / -77</td><td>Repeat procedure/service, same (-76) or different (-77) clinician.</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <!-- SOURCES -->
+      <section id="sources">
+        <h2>Sources &amp; caveats</h2>
+        <ul>
+          <li>Professional RVU/$ figures use CY2026 Medicare PFS values (conversion factor $33.40); national, unadjusted, and (for E/M) approximate non-facility. Confirm individual codes against the CMS PFS Look-Up Tool; provider-based clinics pay the lower facility rate.</li>
+          <li>Office/outpatient E/M leveling, MDM, and prolonged-service rules per the AMA CPT 2021+ E/M framework and CMS (99417 vs Medicare G2212). Teaching-physician documentation per the Medicare Claims Processing Manual ch. 12 §100; incident-to and split/shared per CMS/MLN — substantive-portion definitions have shifted year to year.</li>
+          <li><strong>Telehealth is volatile.</strong> Medicare flexibilities lapsed 31 Jan 2026 and were restored/extended (non-behavioral through 31 Dec 2027; behavioral in-person waiver through 1 Jan 2028) by the Consolidated Appropriations Act, 2026. Re-verify the current expiration and your MAC's guidance before billing. Medicare uses office E/M + modifier 95/93; it does not accept CPT 98000–98015 (but recognizes 98016).</li>
+          <li>Ohio Medicaid telehealth per OAC 5160-1-18 (effective 15 Jul 2022) and the current ODM Telehealth Billing Guidelines; Ohio's telehealth standard-of-care statute is ORC 4743.09 (HB 122, effective 23 Mar 2022), implemented through the licensing boards (e.g., State Medical Board OAC 4731-37-01). Licensure follows the patient's location.</li>
+          <li>Interprofessional consult (99446–99452), online digital E/M / e-visits (99421–99423; non-QHP 98970–98972), care-management (TCM/CCM/PCM), ACP, remote monitoring (RPM/RTM), drug-administration, and PFT codes (incl. CPET 94621 and HAST 94452/94453) per AMA CPT and CMS guidance. Care-management $ are national monthly averages (~2025–26); RPM/RTM and small-wRVU procedure dollars are practice-expense-driven and site-dependent. CPT telemedicine codes 98000–98016 added CY2025. HCPCS J-codes update frequently.</li>
+          <li>This is an educational documentation-improvement reference — not coding, legal, or financial advice, and not an official CMS, AMA, or Ohio product. CPT&reg; is a registered trademark of the AMA. Final code assignment rests with certified coders/CDI and your compliance team.</li>
+        </ul>
+        <p class="disclaimer">Built as a static reference site, companion to the <a href="index.html">Critical Care (ICU)</a> page. Professional values current as of CY2026 Medicare rules; telehealth status as of early 2026. Re-verify at the next PFS / CPT update and whenever the telehealth extension date approaches.</p>
+      </section>
+
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
