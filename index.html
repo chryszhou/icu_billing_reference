@@ -22,6 +22,7 @@
       <a href="#rvu">Critical care RVUs</a>
       <a href="#procedures">Procedures</a>
       <div class="grp">Diagnoses &amp; DRG value</div>
+      <a href="#pcs">Procedures (ICD-10-PCS)</a>
       <a href="#diagnoses">Diagnoses by organ system</a>
       <a href="#drg">DRG value ranking</a>
       <a href="#complex">Complex care &amp; long LOS</a>
@@ -48,15 +49,21 @@
       </section>
 
       <section>
-        <h2>How payment works — and why wording moves money</h2>
-        <p>Two code sets do two different jobs; confusing them is the most common error.</p>
-        <ul>
-          <li><strong>CPT / E&amp;M codes</strong> generate professional dollars. Medicare payment = total RVU &times; conversion factor (CF), adjusted by local GPCI. CY2026 non-APM CF = <strong>$33.40</strong> (QP/APM CF $33.57).</li>
-          <li><strong>ICD-10 diagnosis codes</strong> don't add professional RVUs. They establish medical necessity and drive the facility <strong>MS-DRG</strong> and severity (CC/MCC). On the facility side, payment = DRG relative weight &times; hospital base rate (FY2026 national standardized operating base rate <strong>$6,752.61</strong>, before wage index/DSH/IME/outliers).</li>
-        </ul>
-        <h3>The two payment formulas</h3>
-        <p class="callout"><strong>Professional:</strong> [(wRVU&times;wGPCI) + (PE&times;peGPCI) + (MP&times;mpGPCI)] &times; $33.40<br>
-        <strong>Facility (DRG):</strong> DRG relative weight &times; hospital base rate (~$6,752.61 national)</p>
+        <h2>How payment works — two separate money streams</h2>
+        <p>One ICU stay generates <strong>two independent bills</strong> that never come out of each other. Confusing them is the most common error.</p>
+        <div class="streams">
+          <div class="stream prof">
+            <div class="stream-h">Professional — that's you</div>
+            <div class="stream-sub">Medicare Part B &middot; Physician Fee Schedule &middot; CPT / E&amp;M codes</div>
+            <div class="stream-f">[(wRVU&times;wGPCI) + (PE&times;peGPCI) + (MP&times;mpGPCI)] &times; $33.40</div>
+          </div>
+          <div class="stream fac">
+            <div class="stream-h">Facility — the hospital (DRG)</div>
+            <div class="stream-sub">Medicare Part A &middot; IPPS &middot; ICD-10 diagnoses &amp; procedures</div>
+            <div class="stream-f">DRG relative weight &times; hospital base rate (~$6,752.61 national)</div>
+          </div>
+        </div>
+        <p><strong>CPT / E&amp;M codes</strong> generate your professional dollars (total RVU &times; conversion factor, adjusted by local GPCI; CY2026 non-APM CF <strong>$33.40</strong>, QP/APM CF $33.57). <strong>ICD-10 diagnosis codes</strong> add no professional RVUs — they establish medical necessity and drive the facility <strong>MS-DRG</strong> and its severity tier (CC/MCC). FY2026 national standardized operating base rate <strong>$6,752.61</strong>, before wage index/DSH/IME/outliers.</p>
         <p>DRGs come in tiers — <em>with MCC</em> (highest) / <em>with CC</em> / <em>without CC-MCC</em>. The tier is set by the single highest-severity secondary diagnosis: one MCC maxes the tier, so the <strong>first</strong> MCC/CC captured is the valuable one. Capturing a CC is typically worth ~$1,200–$3,000; an MCC ~$3,000–$6,000+.</p>
         <p class="badge-key small"><strong>Color key:</strong>
           <span class="b mcc">MCC</span> major (highest $)
@@ -64,6 +71,42 @@
           <span class="b neither">Neither</span> no severity weight
           <span class="b proc">Procedure</span> drives DRG via procedure code
         </p>
+
+        <h3>Common questions</h3>
+        <details class="faq">
+          <summary>Can a hospital get reimbursed for multiple DRGs in a single hospitalization?</summary>
+          <div class="faq-body">
+            <p><strong>Generally no — one MS-DRG per discharge.</strong> The entire stay groups to a single DRG based on the principal diagnosis, all secondary diagnoses (CC/MCC), procedures, and discharge disposition.</p>
+            <p>Outlier payments, New Technology Add-On Payments (NTAP), and DSH/IME adjustments can <em>increase</em> that one payment but are not additional DRGs. Genuinely separate admissions are separate DRGs; a same-day, same-hospital readmission for a <em>related</em> condition must be combined onto one claim (one DRG). A transferring hospital is usually paid a reduced per-diem rather than the full DRG.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>Is the DRG billed separately from the physician component, or does the physician fee come out of the DRG?</summary>
+          <div class="faq-body">
+            <p><strong>Separate — the physician fee does not come out of the DRG.</strong> The DRG is the hospital's facility payment under Part A (IPPS). Your professional work is billed independently under Part B (Physician Fee Schedule, CPT codes).</p>
+            <p>They are two distinct claims with separate deductibles that don't net against each other. As an academic attending, if you're employed, your Part B payment may flow to the faculty practice plan — but it's still a separate claim, never part of the DRG.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>What costs come out of the DRG?</summary>
+          <div class="faq-body">
+            <p>The DRG is a bundled <strong>facility</strong> payment covering the hospital's cost of the stay: room/bed and ICU overhead, nursing, drugs and supplies, blood products, implanted devices, and the <em>technical</em> component of labs and imaging.</p>
+            <p><strong>Not</strong> from the DRG: physician professional services (separate Part B). Think of it as everything the hospital itself provides, bundled into one payment per stay.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>Once you've captured a single MCC, is there any point to capturing more CCs?</summary>
+          <div class="faq-body">
+            <p><strong>For this stay's Medicare MS-DRG payment: no extra dollars.</strong> One MCC already maxes the severity tier; additional CCs or MCCs don't push the same DRG higher.</p>
+            <p><strong>But keep capturing them — it still matters:</strong></p>
+            <ul>
+              <li><strong>APR-DRG / SOI-ROM</strong> (many commercial, Medicaid, and pediatric payers) <em>do</em> escalate with each additional secondary diagnosis.</li>
+              <li><strong>Risk adjustment &amp; quality:</strong> expected mortality, O:E ratios, and physician/hospital profiling depend on full comorbidity capture.</li>
+              <li><strong>Audit resilience:</strong> if the one MCC is denied, recoded, or turns out to be the principal diagnosis, a second MCC/CC protects the tier.</li>
+              <li><strong>Medical necessity &amp; LOS:</strong> supports the documented level of care and length of stay.</li>
+            </ul>
+          </div>
+        </details>
       </section>
 
       <!-- DOWNLOADS -->
@@ -256,6 +299,108 @@
           </tbody>
         </table></div>
         <p class="small">Most ICU bedside procedures carry a 000-day global, so same-day critical care with -25 is generally payable. Check NCCI edits for the specific pair.</p>
+      </section>
+
+      <!-- PCS PROCEDURES -->
+      <section id="pcs">
+        <h2>Procedures that drive the DRG — ICD-10-PCS</h2>
+        <p>ICD-10-PCS is the <strong>facility</strong> procedure code set on the hospital claim — separate from the CPT codes you bill professionally. Every code is 7 characters, each an independent axis: section, body system, operation, body part, <strong>approach</strong>, <strong>device/duration</strong>, qualifier. The coder builds it <em>only</em> from your documentation and can't infer a missing axis — so what you write decides which code lands.</p>
+
+        <h3>Worked example 1 — mechanical ventilation</h3>
+        <p class="pcs-codeline">5A1955Z — invasive ventilation, &gt;96 hours</p>
+        <div class="pcs-decode">
+          <div class="pcs-char">5</div><div class="pcs-char">A</div><div class="pcs-char">1</div>
+          <div class="pcs-char">9</div><div class="pcs-char lever">5</div><div class="pcs-char">5</div><div class="pcs-char">Z</div>
+        </div>
+        <div class="pcs-labels">
+          <div>Section<b>Extracorp.</b></div>
+          <div>Body sys<b>Physiol.</b></div>
+          <div>Operation<b>Performance</b></div>
+          <div>Function<b>Respiratory</b></div>
+          <div class="lever">Duration<b>&gt;96 hrs</b></div>
+          <div>Function<b>Ventilation</b></div>
+          <div>Qualifier<b>None</b></div>
+        </div>
+        <p class="small">Character 5 alone moves the money — the 96-hour cliff (respiratory dx, base rate $6,752.61):</p>
+        <div class="pcs-cliff">
+          <div class="pcs-cliff-card">
+            <div class="c">5A1945Z &middot; &le;96h</div>
+            <div class="d">MS-DRG 208</div>
+            <div class="w">weight 2.7487</div>
+            <div class="v">&asymp; $18,562</div>
+          </div>
+          <div class="op">&rarr;</div>
+          <div class="pcs-cliff-card hi">
+            <div class="c">5A1955Z &middot; &gt;96h</div>
+            <div class="d">MS-DRG 207</div>
+            <div class="w">weight 6.4347</div>
+            <div class="v">&asymp; $43,450</div>
+          </div>
+        </div>
+        <div class="pcs-swing">One hour across the 96h line &asymp; <strong>$24,900</strong> swing on the facility claim</div>
+        <p class="small">Counted as continuous hours from intubation to extubation — so the note needs <strong>times</strong>, not &ldquo;on the vent for days.&rdquo; BiPAP/NIPPV is a different code and does not count toward these hours.</p>
+
+        <h3>Worked example 2 — CRRT</h3>
+        <p class="pcs-codeline">5A1D90Z — renal replacement, continuous (&gt;18 hrs/day)</p>
+        <div class="pcs-decode">
+          <div class="pcs-char">5</div><div class="pcs-char">A</div><div class="pcs-char">1</div>
+          <div class="pcs-char">D</div><div class="pcs-char lever">9</div><div class="pcs-char">0</div><div class="pcs-char">Z</div>
+        </div>
+        <div class="pcs-labels">
+          <div>Section<b>Extracorp.</b></div>
+          <div>Body sys<b>Physiol.</b></div>
+          <div>Operation<b>Performance</b></div>
+          <div>Function<b>Urinary</b></div>
+          <div class="lever">Duration<b>Continuous</b></div>
+          <div>Function<b>Filtration</b></div>
+          <div>Qualifier<b>None</b></div>
+        </div>
+        <p class="small">Here the <em>procedure</em> barely moves the DRG — the lever is the diagnosis it treats:</p>
+        <div class="pcs-cliff">
+          <div class="pcs-cliff-card flat">
+            <div class="c">5A1D90Z alone</div>
+            <div class="d">CRRT procedure</div>
+            <div class="w">not an O.R. procedure</div>
+            <div class="v">&asymp; no DRG change</div>
+          </div>
+          <div class="op">+</div>
+          <div class="pcs-cliff-card hi">
+            <div class="c">N17.x acute kidney failure</div>
+            <div class="d">documented as a <span class="b cc">CC</span></div>
+            <div class="w">lifts tier: w/o CC/MCC &rarr; with CC</div>
+            <div class="v">&asymp; +$1,200–3,000</div>
+          </div>
+        </div>
+        <p class="small">For CRRT, capture two things: the <strong>continuous</strong> modality (character 5 = continuous vs <span class="code">5A1D70Z</span> intermittent), and the <strong>acute kidney failure / ATN it&rsquo;s treating</strong> — the diagnosis is what bumps the tier, not the filter.</p>
+
+        <h3>The other ICU procedures, ranked by DRG leverage</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>Procedure</th><th>Example PCS code(s)</th><th>DRG leverage</th><th>Document this</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Tracheostomy</strong></td><td class="code">0B110F4 open · 0B113F4 perc</td><td><span class="b mcc">Pre-MDC 003/004</span> wt 21.2 / 13.9</td><td>Date, approach, device placed, <em>new vs pre-existing</em></td></tr>
+            <tr><td><strong>ECMO</strong></td><td class="code">5A1522F/G/H (central / VA / VV)</td><td><span class="b mcc">Pre-MDC 003</span> wt 21.2</td><td>Configuration (VA/VV; central/periph), cannulation &amp; decannulation date/time</td></tr>
+            <tr><td><strong>Mechanical circulatory support</strong> (IABP, Impella, pVAD)</td><td class="code">5A02… (verify by device)</td><td><span class="b mcc">High cardiac DRGs</span></td><td>Device type, intermittent vs continuous, insertion/removal date/time</td></tr>
+            <tr><td><strong>Therapeutic hypothermia / TTM</strong></td><td class="code">6A4Z0ZZ single · 6A4Z1ZZ multiple</td><td><span class="b neither">Supportive</span></td><td>Indication (post-arrest), single vs multiple sessions</td></tr>
+            <tr><td><strong>Intubation, bronchoscopy, chest tube, thora/paracentesis, lines</strong></td><td class="code">0BH17EZ, 0BJ08ZZ, 0W9930Z, …</td><td><span class="b neither">Low / non-O.R.</span></td><td>Capture for completeness; approach &amp; site</td></tr>
+          </tbody>
+        </table></div>
+
+        <h3>How to write the note so it&rsquo;s captured</h3>
+        <div class="smartphrase" id="sp-pcs" data-copy="Invasive mechanical ventilation via ETT, continuous since [date/time]; remains ventilated (or extubated [date/time]). CRRT (CVVHDF), continuous, initiated [date/time], for acute kidney failure / ATN. Percutaneous tracheostomy performed [date]; tracheostomy tube placed. VV ECMO, peripheral cannulation, initiated [date/time]; ongoing.">
+          <button class="copybtn" data-target="sp-pcs">Copy</button>
+          <span class="lbl">Ready-to-paste documentation lines</span>
+          &ldquo;Invasive mechanical ventilation via ETT, continuous since [date/time]; remains ventilated.&rdquo; (or &ldquo;extubated [date/time]&rdquo;)<br>
+          &ldquo;CRRT (CVVHDF), continuous, initiated [date/time], for acute kidney failure / ATN.&rdquo;<br>
+          &ldquo;Percutaneous tracheostomy performed [date]; tracheostomy tube placed.&rdquo;<br>
+          &ldquo;VV ECMO, peripheral cannulation, initiated [date/time]; ongoing.&rdquo;
+        </div>
+        <ul>
+          <li><strong>Timestamps over adjectives.</strong> Every vent/ECMO/CRRT duration code is computed from documented start/stop times.</li>
+          <li><strong>Name the modality.</strong> Continuous CRRT vs intermittent HD; invasive vent vs BiPAP; VA vs VV ECMO.</li>
+          <li><strong>Link the procedure to its diagnosis.</strong> CRRT only earns its keep when the acute kidney failure (N17, a CC) is documented and coded.</li>
+          <li><strong>New procedure vs chronic status.</strong> A trach placed this stay drives 003/004; &ldquo;chronically trached at baseline&rdquo; is a status code and does not.</li>
+        </ul>
+        <p class="small">Educational documentation-improvement reference. PCS-to-DRG assignment changes annually; verify codes against the current ICD-10-PCS tables, the FY2026 MS-DRG Definitions Manual, and AHA Coding Clinic.</p>
       </section>
 
       <!-- DIAGNOSES -->
