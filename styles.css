@@ -18,9 +18,9 @@ a:hover{text-decoration:underline}
 .sidebar h1{font-size:16px;margin:0 18px 4px;line-height:1.25}
 .sidebar .sub{font-size:11px;color:#aebfd8;margin:0 18px 16px}
 
-/* cross-page switcher */
-.pageswitch{display:flex;gap:6px;margin:0 14px 16px}
-.pageswitch a{flex:1;text-align:center;font-size:11.5px;font-weight:600;line-height:1.2;
+/* cross-page switcher — 2-column grid (3 pages = 2 rows; becomes a clean 2x2 with the 4th page) */
+.pageswitch{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:0 14px 16px}
+.pageswitch a{text-align:center;font-size:11.5px;font-weight:600;line-height:1.2;
   color:#cfe0f5;background:rgba(255,255,255,.06);border:1px solid #3a527e;border-radius:7px;
   padding:7px 6px}
 .pageswitch a:hover{background:rgba(255,255,255,.14);text-decoration:none}
@@ -177,3 +177,22 @@ body.theme-clinic .copybtn:hover{background:#4E8E6B}
 body.theme-clinic .smartphrase .lbl{color:#8fc0a6}
 body.theme-clinic .b.proc{background:#DCE9E1;color:#2F4A3A}
 body.theme-clinic .topbar button{border-color:#51735f}
+
+/* ---- inpatient consults page: purple theme — scoped to body.theme-consult so the other pages keep their colors ---- */
+body.theme-consult{
+  --navy:#3B2A66; --blue:#6B3FA0; --lblue:#F1EBF8; --line:#DACEEB;
+}
+body.theme-consult a{color:#5B2D91}                 /* darker link for AA contrast on white */
+body.theme-consult .hero{background:linear-gradient(135deg,#3B2A66,#6B3FA0)}
+body.theme-consult .hero p{color:#e6dcf3}
+body.theme-consult .sidebar .sub{color:#b8a6d6}
+body.theme-consult .sidebar nav a{color:#d8cce8}
+body.theme-consult .sidebar nav .grp{color:#9482b0}
+body.theme-consult .sidebar nav a.active{border-left-color:#a78fd0;color:#fff}
+body.theme-consult .pageswitch a{color:#d0c2e6;border-color:#54447e}
+body.theme-consult .pageswitch a.cur{color:var(--navy)}
+body.theme-consult .copybtn{background:#6B3FA0}
+body.theme-consult .copybtn:hover{background:#7d4fb5}
+body.theme-consult .smartphrase .lbl{color:#a78fd0}
+body.theme-consult .b.proc{background:#E3D8F3;color:#3B2A66}
+body.theme-consult .topbar button{border-color:#6b5594}

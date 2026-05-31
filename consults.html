@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inpatient Pulmonary Consults Billing & Documentation Reference — CY2026</title>
+<meta name="description" content="Inpatient billing & documentation reference for an academic pulmonary/PCCM consult service: hospital E/M (99221–99233) when a primary team is already billing, modifier AI, consultant critical care time, ventilator-management consults, and bedside procedures (bronchoscopy covered separately). CY2026 Medicare values.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-consult">
+<div class="layout">
+  <aside class="sidebar">
+    <h1> Pulmonary Consults Billing &amp; Documentation</h1>
+    <div class="sub">iInpatient consult reference &middot; CY2026</div>
+    <div class="pageswitch">
+      <a href="index.html">Critical Care<br>(ICU)</a>
+      <a href="clinic.html">Pulmonary<br>Clinic</a>
+      <a href="consults.html" class="cur">Inpatient<br>Consults</a>
+    </div>
+    <nav>
+      <div class="grp">Start</div>
+      <a href="#overview">Overview &amp; how payment works</a>
+      <a href="#primary">The primary team &amp; the consult bill</a>
+      <div class="grp">Professional billing</div>
+      <a href="#em">Hospital E/M (99221&ndash;99233)</a>
+      <a href="#criticalcare">Critical care on a consult</a>
+      <a href="#trainees">Residents &amp; APPs</a>
+      <div class="grp">Procedures &amp; vent management</div>
+      <a href="#procedures">Bedside procedures</a>
+      <a href="#vent">Ventilator management</a>
+      <div class="grp">Reference</div>
+      <a href="#modifiers">Consult modifiers</a>
+      <a href="#sources">Sources &amp; caveats</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <button id="menubtn" aria-label="Menu">&#9776;</button>
+      <span class="t">Inpatient Pulmonary Consults Reference</span>
+    </div>
+    <div class="wrap">
+
+      <!-- OVERVIEW -->
+      <section id="overview" class="hero">
+        <h2>Inpatient Pulmonary Consults Billing &amp; Documentation Reference</h2>
+        <p>A working reference for the <strong>inpatient pulmonary / PCCM consult service</strong> at an academic center &mdash; where the patient already belongs to a primary team, a fellow or resident often sees them first, and the day's work runs from a stable-effusion consult to directing critical care for respiratory failure. CY2026 Medicare professional values (conversion factor <strong>$33.40</strong>).</p>
+        <p class="small" style="color:#e6dcf3">Educational reference for documentation improvement &mdash; not coding, legal, or financial advice, and not an official CMS/AMA product. Verify against current CMS, your MAC, and payer policy before billing.</p>
+      </section>
+
+      <!-- PRIMARY TEAM & THE CONSULT BILL -->
+      <section id="primary">
+        <h2>The primary team &amp; the consult bill</h2>
+        <p>As a consultant you are paid the same way every physician is paid for inpatient work: <strong>Part B professional dollars</strong> on the <strong>Physician Fee Schedule</strong> (total RVU &times; $33.40 &times; local GPCI). You do <em>not</em> touch the facility <strong>DRG</strong> &mdash; that is the hospital's Part A payment for the whole stay, shared across everyone who cares for the patient. The wrinkle that defines consult billing is that <strong>someone else is already billing an E/M on this patient every day.</strong></p>
+        <p>The consultant reports the <strong>same hospital E/M codes</strong> as everyone else &mdash; <em>initial</em> hospital/inpatient care <span class="code">99221&ndash;99223</span> on the day you first see the patient, then <em>subsequent</em> hospital care <span class="code">99231&ndash;99233</span> on follow-up days. (The 2023 E/M revision merged inpatient and observation into this one family and moved leveling to <strong>MDM or total time</strong>.)</p>
+
+        <h3>Two teams, two bills, same day &mdash; when does Medicare pay both?</h3>
+        <ul>
+          <li><strong>Different specialty (or different group) &rarr; both are paid.</strong> Pulmonary consulting on a patient admitted to hospital medicine, a surgical service, or cardiology is a different specialty designation in PECOS, so your E/M and the primary team's E/M on the same calendar day are each payable.</li>
+          <li><strong>Same specialty + same group &rarr; only one E/M.</strong> If the &ldquo;primary&rdquo; team is also PCCM in your own group, Medicare treats you as one physician for that patient that day &mdash; coordinate who bills rather than submitting two E/Ms.</li>
+          <li>Two different specialties each bill their <strong>own</strong> E/M with <strong>no special modifier</strong> for the overlap &mdash; <span class="code">-25</span> is an <em>intra</em>-provider modifier (a procedure on the same day as your <em>own</em> E/M), not the mechanism for two physicians to coexist.</li>
+        </ul>
+
+        <p class="callout warn"><strong>Commercial &amp; Medicaid aside &mdash; consult codes may still live.</strong> Medicare doesn't recognize consultation codes, but many commercial and some Medicaid payers still accept inpatient consult codes <span class="code">99252&ndash;99255</span> (99251 was deleted in 2023). They require the classic <strong>&ldquo;3 R's&rdquo;</strong>: a <strong>R</strong>equest from another provider, the service you <strong>R</strong>ender, and a written <strong>R</strong>eport back to the requester. Check each payer before using them.</p>
+
+        <h3>Common questions</h3>
+        <details class="faq">
+          <summary>The hospitalist already billed an E/M today &mdash; can I bill one too?</summary>
+          <div class="faq-body">
+            <p><strong>Yes, if you're a different specialty/group.</strong> Pulmonary and hospital medicine are distinct specialties, so each bills its own daily E/M for its own problem. Document <em>your</em> reason for involvement, your independent assessment, and your decision-making &mdash; don't simply echo the primary team's note.</p>
+          </div>
+        </details>
+        <details class="faq">
+          <summary>What if the primary team is also pulmonary?</summary>
+          <div class="faq-body">
+            <p><strong>Then you likely can't bill a separate E/M.</strong> Same specialty + same group = one physician for that patient/day in Medicare's eyes. This comes up when a patient on your own PCCM service generates a &ldquo;pulmonary&rdquo; consult to the same group &mdash; coordinate a single E/M rather than two. A genuinely different group/specialty is what unlocks a second bill.</p>
+          </div>
+        </details>
+      </section>
+
+      <!-- HOSPITAL E/M -->
+      <section id="em">
+        <h2>Hospital E/M the consultant bills &mdash; 99221&ndash;99233</h2>
+        <p>Your first day on a patient is <strong>initial hospital/inpatient care</strong> (<span class="code">99221&ndash;99223</span>); every day after is <strong>subsequent hospital care</strong> (<span class="code">99231&ndash;99233</span>). Since 2023 both are leveled by <strong>medical decision making (MDM)</strong> <em>or</em> <strong>total time on the date of the encounter</strong> &mdash; whichever is more favorable.</p>
+
+        <h3>Initial &amp; subsequent inpatient E/M</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Visit</th><th>MDM</th><th>Total time (date)</th><th class="num">Work RVU</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">99221</td><td>Initial, day 1</td><td>Straightforward / low</td><td>40 min</td><td class="num">1.63</td><td class="num">$82</td></tr>
+            <tr><td class="code">99222</td><td>Initial, day 1</td><td>Moderate</td><td>55 min</td><td class="num">2.60</td><td class="num">$111</td></tr>
+            <tr><td class="code">99223</td><td>Initial, day 1</td><td>High</td><td>75 min</td><td class="num">3.50</td><td class="num">$164</td></tr>
+            <tr><td class="code">99231</td><td>Subsequent</td><td>Straightforward / low</td><td>25 min</td><td class="num">1.00</td><td class="num">$50</td></tr>
+            <tr><td class="code">99232</td><td>Subsequent</td><td>Moderate</td><td>35 min</td><td class="num">1.39</td><td class="num">$69</td></tr>
+            <tr><td class="code">99233</td><td>Subsequent</td><td>High</td><td>50 min</td><td class="num">2.00</td><td class="num">$98</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">Work RVUs are national CY2026 values; dollars are <strong>approximate national</strong> (total facility RVU &times; $33.40, rounded) &mdash; verify against the CMS PFS Look-Up Tool. Local GPCI varies.</p>
+
+        <h3>Leveling by MDM &mdash; pulmonary consult examples</h3>
+        <p>Pick MDM or time, whichever favors the visit. Common consult-service MDM anchors:</p>
+        <ul>
+          <li><strong>Moderate (99222 / 99232):</strong> COPD or asthma exacerbation, a new pleural effusion being worked up, a pulmonary nodule, starting or adjusting prescription drug therapy.</li>
+          <li><strong>High (99223 / 99233):</strong> acute respiratory failure, massive/submassive PE, massive hemoptysis, decompensation with a decision about escalation or transfer to the ICU &mdash; or drug therapy requiring intensive toxicity monitoring.</li>
+        </ul>
+        <p>Past the top of the highest level, prolonged inpatient time adds on: CPT <span class="code">99418</span> for most payers, but <strong>Medicare uses <span class="code">G0316</span></strong> &mdash; don't report 99418 to Medicare.</p>
+
+        <div class="smartphrase" id="sp-consult" data-copy="Pulmonary/PCCM consultation requested by [requesting service/provider] for [reason]. I personally evaluated the patient, reviewed [imaging/labs/prior records], and independently performed the assessment and medical decision-making documented below. Recommendations communicated to the primary team. Leveled by MDM; if time-based, total time personally spent on the date of this encounter was ___ minutes (excluding separately reported procedures).">
+          <button class="copybtn" data-target="sp-consult">Copy</button>
+          <span class="lbl">Consult-day note attestation &mdash; name the requesting service &amp; reason</span>
+          &ldquo;Pulmonary/PCCM consultation requested by [requesting service/provider] for [reason]. I personally evaluated the patient, reviewed [imaging/labs/prior records], and independently performed the assessment and medical decision-making documented below. Recommendations communicated to the primary team. Leveled by MDM; if time-based, total time personally spent on the date of this encounter was ___ minutes (excluding separately reported procedures).&rdquo;
+        </div>
+      </section>
+
+      <!-- CRITICAL CARE ON A CONSULT -->
+      <section id="criticalcare">
+        <h2>Can a consult service bill critical care time? Yes &mdash; with conditions</h2>
+        <p>Critical care (<span class="code">99291</span> first 30&ndash;74 min; <span class="code">99292</span> each additional 30 min) is <strong>not reserved for the ICU team of record.</strong> A pulmonary consultant who personally delivers critical care can bill it &mdash; for example, directing management of acute respiratory failure on a ward patient or a surgical-service patient.</p>
+        <p>It is still <strong>time-based and definition-gated</strong>. Both must be true: (1) a critical illness/injury acutely impairing a vital organ system with a high probability of imminent, life-threatening deterioration, AND (2) high-complexity decision-making to treat or prevent it. A sick-but-stable consult is <strong>hospital E/M (99221&ndash;99233), not critical care.</strong> See the <a href="index.html#em">ICU page's critical-care section</a> for the time&rarr;code mapping and the list of services bundled into 99291/99292.</p>
+
+        <h3>The conditions that let a consultant bill it</h3>
+        <ul>
+          <li><strong>Different specialty/group from whoever else is billing critical care.</strong> Two physicians of the <em>same specialty in the same group</em> have their minutes <strong>aggregated into one</strong> 99291 claim &mdash; they can't each bill it. A different specialty does bill its own 99291 for its own critical-care work. (See the <a href="index.html#em">aggregation rules</a>.)</li>
+          <li><strong>Your time must independently be critical care</strong> and directed at the failing organ system &mdash; not routine follow-up.</li>
+          <li><strong>No double-counting.</strong> Simultaneous bedside time with another physician is counted once; carve out any separately billable procedure minutes.</li>
+        </ul>
+
+        <div class="smartphrase" id="sp-cc" data-copy="As the pulmonary/critical care consultant (specialty distinct from the primary team), I personally provided ___ minutes of critical care to this patient on [date], exclusive of separately billable procedures and teaching time. The patient has [organ system] failure at high risk of imminent life-threatening deterioration; I reviewed [data], directed [interventions], and reassessed the response. This time does not overlap with critical care time billed by another physician.">
+          <button class="copybtn" data-target="sp-cc">Copy</button>
+          <span class="lbl">Consultant critical-care minute attestation &mdash; real number, distinct specialty</span>
+          &ldquo;As the pulmonary/critical care consultant (specialty distinct from the primary team), I personally provided ___ minutes of critical care to this patient on [date], exclusive of separately billable procedures and teaching time. The patient has [organ system] failure at high risk of imminent life-threatening deterioration; I reviewed [data], directed [interventions], and reassessed the response. This time does not overlap with critical care time billed by another physician.&rdquo;
+        </div>
+        <p class="small">Watch the same-group trap: if your group <em>is</em> the ICU team of record, the minutes aggregate &mdash; you don't get a second 99291. The clean consultant critical-care bill is when you're a distinct specialty/group from the team already billing.</p>
+      </section>
+
+      <!-- RESIDENTS & APPs -->
+      <section id="trainees">
+        <h2>Working with a resident or APP on a consult</h2>
+        <p>Whose work counts depends on whether you're with a <strong>resident/fellow</strong> (Teaching Physician rules) or an <strong>APP/NPP</strong> (split/shared rules). Don't conflate them. <strong>Pulmonary fellows are residents</strong> for Medicare teaching-physician purposes.</p>
+
+        <h3>Residents &amp; fellows &mdash; Teaching Physician (TP) rules</h3>
+        <ul>
+          <li>The service bills under the <strong>teaching physician</strong>, who must <strong>personally see the patient</strong> and perform (or be present for) the portion that determines the level.</li>
+          <li><strong>Leveling by MDM:</strong> the TP may <em>verify</em> the resident's/fellow's documented history, exam, and assessment rather than re-document them, but must personally participate in the decision-making and say so.</li>
+          <li><strong>Leveling by time:</strong> only the <strong>TP's own time</strong> counts &mdash; resident-alone time does not.</li>
+          <li><strong>Critical care with a resident:</strong> only the TP's personal minutes count, and there is <strong>no split/shared with a resident</strong> &mdash; the service bills under the TP.</li>
+          <li>Append modifier <span class="code">GC</span>. The Primary Care Exception (<span class="code">GE</span>) does <strong>not</strong> apply to inpatient consults or critical care.</li>
+        </ul>
+        <div class="smartphrase" id="sp-tp" data-copy="I personally saw and evaluated the patient with the fellow/resident. I reviewed their documented history, exam, and assessment, agree with them except as noted, and personally performed the medical decision-making (and, for critical care, the critical care time reported is my own). Only my personal time is counted toward any time-based total.">
+          <button class="copybtn" data-target="sp-tp">Copy</button>
+          <span class="lbl">Teaching-physician consult attestation</span>
+          &ldquo;I personally saw and evaluated the patient with the fellow/resident. I reviewed their documented history, exam, and assessment, agree with them except as noted, and personally performed the medical decision-making (and, for critical care, the critical care time reported is my own). Only my personal time is counted toward any time-based total.&rdquo;
+        </div>
+
+        <h3>APPs / NPPs &mdash; split (or shared) visit rules</h3>
+        <ul>
+          <li>Applies when a physician <strong>and</strong> an APP (NP/PA) in the <strong>same group</strong> both personally perform part of the same patient's care on the same calendar day.</li>
+          <li><strong>Combine</strong> the physician's and APP's work/time; whoever performed the <strong>substantive portion</strong> bills (for time-based services, &gt;50% of the combined time). Append modifier <span class="code">FS</span>.</li>
+          <li><strong>Payment lever:</strong> APP-billed pays ~85% of the fee schedule; physician-billed (substantive portion) pays 100%.</li>
+          <li>Document both individuals by name, each one's role/time, the combined total, and who did the substantive portion; the billing clinician signs and dates.</li>
+        </ul>
+
+        <h3>Quick decision guide</h3>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th>You're working with&hellip;</th><th>Whose time counts</th><th>Who bills</th><th>Modifier</th></tr></thead>
+          <tbody>
+            <tr><td>A resident or fellow</td><td>Teaching physician's time only</td><td>Teaching physician</td><td class="code">GC</td></tr>
+            <tr><td>An APP in your group</td><td>Physician + APP combined; &gt;50% = substantive</td><td>Substantive-portion clinician</td><td class="code">FS</td></tr>
+            <tr><td>Both a resident and an APP</td><td>TP rules for MD/resident; APP time combines per split/shared</td><td>Per rows above</td><td class="code">GC and/or FS</td></tr>
+            <tr><td>A different-specialty physician</td><td>Each counts their own time</td><td>Each bills their own</td><td>(none)</td></tr>
+          </tbody>
+        </table></div>
+        <p class="small">A procedure performed with a trainee also needs a <strong>supervision / teaching-physician presence statement</strong> in the procedure note. Medicare rules; split/shared substantive-portion definitions have shifted year to year &mdash; confirm current CMS/MAC policy.</p>
+      </section>
+
+      <!-- BEDSIDE PROCEDURES -->
+      <section id="procedures">
+        <h2>Bedside procedures</h2>
+        <p class="callout"><strong>Bronchoscopy is intentionally deferred to a separate page.</strong> This section covers the <strong>bedside</strong> procedures a pulmonary consult service commonly performs on the floor.</p>
+        <p>Most bedside procedures are <strong>separately payable in addition to the same-day E/M</strong> &mdash; but (1) append modifier <span class="code">-25</span> to the E/M so the payer doesn't bundle it into the procedure, and (2) <strong>carve the procedure minutes out of any critical-care time</strong>.</p>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">CPT</th><th>Procedure</th><th class="num">Work RVU</th><th class="num">~Medicare</th></tr></thead>
+          <tbody>
+            <tr><td class="code">32554</td><td>Thoracentesis, without imaging guidance</td><td class="num">1.77</td><td class="num">$79</td></tr>
+            <tr><td class="code">32555</td><td>Thoracentesis, <strong>with</strong> imaging guidance</td><td class="num">2.21</td><td class="num">$94</td></tr>
+            <tr><td class="code">32556</td><td>Pleural drainage, percutaneous catheter (pigtail), without imaging</td><td class="num">2.20</td><td class="num">~$130</td></tr>
+            <tr><td class="code">32557</td><td>Pleural drainage, percutaneous catheter, <strong>with</strong> imaging</td><td class="num">2.50</td><td class="num">~$155</td></tr>
+            <tr><td class="code">32550</td><td>Insertion of indwelling <strong>tunneled pleural catheter</strong> (e.g., PleurX)</td><td class="num">3.13</td><td class="num">~$200</td></tr>
+            <tr><td class="code">32552</td><td>Removal of indwelling tunneled pleural catheter</td><td class="num">2.13</td><td class="num">n/a</td></tr>
+            <tr><td class="code">32551</td><td>Tube thoracostomy (chest tube), open</td><td class="num">2.96</td><td class="num">$143</td></tr>
+            <tr><td class="code">32560</td><td>Chemical pleurodesis (e.g., talc slurry) via chest tube</td><td class="num">1.80</td><td class="num">n/a</td></tr>
+            <tr><td class="code">31500</td><td>Emergency endotracheal intubation</td><td class="num">2.93</td><td class="num">$133</td></tr>
+            <tr><td class="code">36620</td><td>Arterial line, percutaneous</td><td class="num">0.98</td><td class="num">$41</td></tr>
+          </tbody>
+        </table></div>
+        <p class="callout warn"><strong>Imaging-guidance traps.</strong> (1) <span class="code">32555/32557</span> already <em>include</em> imaging guidance &mdash; do <strong>not</strong> also bill needle-guidance <span class="code">76942</span> with them. (2) A diagnostic pleural ultrasound you interpret is <span class="code">76604</span>; in a hospital that owns the machine, bill the <strong>professional component only</strong> with <span class="code">-26</span>. Most of these procedures carry a <strong>000-day global</strong>, so a same-day E/M with <span class="code">-25</span> is generally payable.</p>
+
+        <h3>Necessary elements of a billable procedure note</h3>
+        <ul>
+          <li><strong>Indication / medical necessity</strong> &mdash; why now.</li>
+          <li><strong>Informed consent</strong> (or documented emergency exception).</li>
+          <li><strong>Time-out / patient ID</strong> for invasive procedures.</li>
+          <li><strong>Technique &amp; site</strong> &mdash; approach, laterality, anesthesia/prep, image guidance (and whether guidance is bundled).</li>
+          <li><strong>Findings, specimens, devices placed</strong> (e.g., fluid volume removed, catheter type/size, post-procedure CXR for pneumothorax).</li>
+          <li><strong>Complications</strong> (or explicit &ldquo;none&rdquo;) and post-procedure status.</li>
+          <li><strong>Provider attestation</strong> + supervision/teaching-physician statement if a trainee assisted.</li>
+          <li><strong>Time statement</strong> confirming procedure time was excluded from critical-care minutes.</li>
+        </ul>
+        <div class="smartphrase" id="sp-proc" data-copy="Ultrasound-guided left thoracentesis performed at bedside after time-out and informed consent. ___ mL of [serous/serosanguineous] fluid removed; samples sent. Needle/catheter removed intact (or pigtail catheter left to drainage). No immediate complication; post-procedure CXR shows no pneumothorax. Procedure time was separate from and excluded from any critical care time reported today.">
+          <button class="copybtn" data-target="sp-proc">Copy</button>
+          <span class="lbl">Bedside thoracentesis / chest-tube note line</span>
+          &ldquo;Ultrasound-guided left thoracentesis performed at bedside after time-out and informed consent. ___ mL of [serous/serosanguineous] fluid removed; samples sent. Needle/catheter removed intact (or pigtail catheter left to drainage). No immediate complication; post-procedure CXR shows no pneumothorax. Procedure time was separate from and excluded from any critical care time reported today.&rdquo;
+        </div>
+        <p class="small">CY2026 Medicare PFS, national/unadjusted; thoracentesis, tube thoracostomy, intubation, and arterial-line dollars are total facility RVU &times; $33.40. Tunneled-catheter, pleurodesis, and removal values are setting-dependent &mdash; verify each against the CMS PFS Look-Up Tool and check NCCI edits for the specific pair.</p>
+      </section>
+
+      <!-- VENTILATOR MANAGEMENT -->
+      <section id="vent">
+        <h2>Ventilator management &mdash; bill E/M (or critical care), not the vent codes</h2>
+        <p>There are dedicated ventilator-management CPT codes &mdash; <span class="code">94002</span> (first inpatient day), <span class="code">94003</span> (subsequent inpatient days), <span class="code">94004</span> (nursing facility) &mdash; but for an active consult service they're almost always the <strong>wrong</strong> choice.</p>
+        <p class="callout warn"><strong>The trap:</strong> 94002&ndash;94004 are <strong>bundled</strong> &mdash; they cannot be reported on the same day as critical care or a hospital E/M by the <em>same physician for the same patient</em>, and they pay little. Billing the vent code instead of your E/M <strong>forfeits</strong> the more valuable service.</p>
+        <p>So when you're consulted for ventilator management:</p>
+        <ul>
+          <li><strong>Bill subsequent hospital care (<span class="code">99231&ndash;99233</span>)</strong> leveled by MDM &mdash; ventilator dependence plus <strong>acute, chronic, or acute-on-chronic respiratory failure</strong> readily supports moderate-to-high decision-making &mdash; <strong>or</strong></li>
+          <li><strong>Bill critical care (<span class="code">99291/99292</span>)</strong> if the patient meets the critical-care definition and you personally provide the time.</li>
+          <li><strong>Don't</strong> report 94002&ndash;94004 alongside these &mdash; you'd give up the E/M.</li>
+        </ul>
+        <p>Document the <strong>respiratory-failure type</strong> (acute / chronic / acute-on-chronic, hypoxemic vs hypercapnic), the <strong>ventilator settings and changes</strong> you directed, and the <strong>weaning plan</strong> &mdash; that's what supports the E/M level and the medical necessity of your daily involvement.</p>
+        <p class="small">The narrow place 94002&ndash;94004 fit is a provider who is <em>not</em> also furnishing an E/M or critical care for that patient that day &mdash; rare for an active consult. When in doubt, the E/M (or critical care) is the service to document and bill.</p>
+      </section>
+
+      <!-- MODIFIERS -->
+      <section id="modifiers">
+        <h2>Consult modifiers that matter</h2>
+        <div class="tbl-wrap"><table>
+          <thead><tr><th class="code">Modifier</th><th>Use it when</th></tr></thead>
+          <tbody>
+            <tr><td class="code">AI</td><td><strong>Principal physician of record</strong> &mdash; the admitting/attending of the stay. <strong>Consultants do NOT use it.</strong></td></tr>
+            <tr><td class="code">-25</td><td>A significant, separately identifiable E/M is performed the same day as a bedside procedure. Append to the <strong>E/M</strong>.</td></tr>
+            <tr><td class="code">GC</td><td>Service performed in part by a resident/fellow under teaching-physician direction.</td></tr>
+            <tr><td class="code">FS</td><td>Split/shared visit between a physician and an APP in the same group (facility setting).</td></tr>
+            <tr><td class="code">-59 / XE,XS,XU</td><td>Two normally bundled services (per NCCI) were distinct &mdash; separate sessions, sites, or encounters.</td></tr>
+            <tr><td class="code">-50</td><td>Bilateral procedure &mdash; the same procedure performed on <strong>both sides</strong> in one session the same day (e.g., bilateral thoracentesis or chest tubes). Append to the <strong>procedure</strong> code.</td></tr>
+            <tr><td class="code">-26 / -TC</td><td>Professional (interpretation) vs technical (equipment) component &mdash; e.g., a pleural ultrasound you interpret on a hospital-owned machine.</td></tr>
+            <tr><td class="code">-76 / -77</td><td>Repeat procedure/service, same (-76) or different (-77) clinician.</td></tr>
+          </tbody>
+        </table></div>
+      </section>
+
+      <!-- SOURCES -->
+      <section id="sources">
+        <h2>Sources &amp; caveats</h2>
+        <ul>
+          <li>Professional RVU/$ figures use CY2026 Medicare PFS values (conversion factor $33.40); national, unadjusted, and approximate. Confirm individual codes against the CMS PFS Look-Up Tool; inpatient services pay the facility rate.</li>
+          <li>Inpatient/observation E/M leveling, MDM, and prolonged-service rules per the AMA CPT 2023+ framework and CMS (99418 vs Medicare G0316). Medicare does not recognize consultation codes &mdash; consultants report hospital E/M 99221&ndash;99223 / 99231&ndash;99233; the principal physician of record appends modifier AI. Many commercial/Medicaid payers still accept inpatient consult codes 99252&ndash;99255 (99251 deleted 2023) under the request/render/report requirements.</li>
+          <li>Critical care (99291/99292) is time-based and definition-gated; a distinct-specialty consultant may bill it. Same-specialty/same-group physician minutes aggregate into one claim. Teaching-physician documentation per the Medicare Claims Processing Manual ch. 12 &sect;100; split/shared substantive-portion definitions have shifted year to year.</li>
+          <li>Ventilator-management codes 94002&ndash;94004 are bundled with same-day critical care/E/M by the same physician (CPT/NCCI) &mdash; bill the E/M or critical care instead.</li>
+          <li>Procedure RVUs/payments (thoracentesis, pleural drainage/catheter, tube thoracostomy, pleurodesis, intubation, arterial line) per CY2026 Medicare PFS; image-guidance bundling and global periods per NCCI. Bronchoscopy is covered on a separate page.</li>
+          <li>This is an educational documentation-improvement reference &mdash; not coding, legal, or financial advice, and not an official CMS, AMA, or MAC product. CPT&reg; is a registered trademark of the AMA. Final code assignment rests with certified coders/CDI and your compliance team.</li>
+        </ul>
+        <p class="disclaimer">Built as a static reference site, companion to the <a href="index.html">Critical Care (ICU)</a> and <a href="clinic.html">Pulmonary Clinic</a> pages. Professional values current as of CY2026 Medicare rules. Re-verify at the next PFS / CPT update.</p>
+      </section>
+
+    </div>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
