@@ -114,14 +114,33 @@
   }
 
   /* ---------- copy buttons ---------- */
+  function flashCopied(b){
+    var o=b.textContent; b.textContent="Copied!";
+    setTimeout(function(){b.textContent=o;},1400);
+  }
+  // Fallback for non-secure contexts (file://, plain HTTP) where navigator.clipboard is undefined.
+  function legacyCopy(text){
+    var ta=document.createElement("textarea");
+    ta.value=text; ta.setAttribute("readonly","");
+    ta.style.position="absolute"; ta.style.left="-9999px";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); }catch(e){}
+    document.body.removeChild(ta);
+  }
   function wireCopy(){
     document.querySelectorAll(".copybtn").forEach(function(b){
       b.addEventListener("click",function(){
         var t=document.getElementById(b.getAttribute("data-target"));
+        if(!t) return;                              // guard: missing/typo'd data-target
         var txt=t.getAttribute("data-copy")||t.textContent;
-        navigator.clipboard.writeText(txt).then(function(){
-          var o=b.textContent; b.textContent="Copied!"; setTimeout(function(){b.textContent=o;},1400);
-        });
+        if(navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(txt).then(
+            function(){ flashCopied(b); },
+            function(){ legacyCopy(txt); flashCopied(b); }   // rejected -> fallback
+          );
+        } else {
+          legacyCopy(txt); flashCopied(b);                   // no Clipboard API -> fallback
+        }
       });
     });
   }
@@ -137,9 +156,11 @@
     }
     window.addEventListener("scroll",spy); spy();
     var sb=document.querySelector(".sidebar");
-    var btn=document.getElementById("menubtn");
-    if(btn) btn.addEventListener("click",function(){sb.classList.toggle("open");});
-    links.forEach(function(a){a.addEventListener("click",function(){sb.classList.remove("open");});});
+    if(sb){
+      var btn=document.getElementById("menubtn");
+      if(btn) btn.addEventListener("click",function(){sb.classList.toggle("open");});
+      links.forEach(function(a){a.addEventListener("click",function(){sb.classList.remove("open");});});
+    }
   }
 
   document.addEventListener("DOMContentLoaded",function(){

@@ -58,7 +58,7 @@ thead th{background:var(--navy);color:#fff;position:sticky;top:0;font-weight:600
 tbody tr:nth-child(even){background:var(--lblue)}
 td.code,th.code{white-space:nowrap;font-weight:600;font-family:"SF Mono",Menlo,Consolas,monospace;font-size:12px}
 td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.sortable th{cursor:pointer;user-select:none}
+.sortable th{cursor:pointer;-webkit-user-select:none;user-select:none}
 .sortable th.sortcol::after{content:" \25BE";font-size:9px}
 .sortable th.asc.sortcol::after{content:" \25B4"}
 
